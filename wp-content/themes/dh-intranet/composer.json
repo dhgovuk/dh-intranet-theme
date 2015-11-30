@@ -1,0 +1,19 @@
+{
+    "require": {
+        "dxw/roots-composer": "dev-master#2fad80195fc15bd48329f398d256fcfd013ca0d5",
+        "dxw/php-missing": "dev-master",
+        "dxw/cidr": "dev-master",
+        "dxw/wp-missing": "dev-master",
+        "aura/autoload": "~2.0"
+    },
+    "require-dev": {
+        "10up/wp_mock": "dev-master",
+        "phpunit/phpunit": "4.8.*",
+        "dxw/phar-install": "dev-master"
+    },
+    "autoload": {
+      "psr-4": {
+        "DHIntranet\\": "src/"
+      }
+    }
+}

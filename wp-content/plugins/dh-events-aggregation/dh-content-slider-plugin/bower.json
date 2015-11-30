@@ -1,0 +1,6 @@
+{
+  "name": "dh-content-slider-plugin",
+  "dependencies": {
+    "jsrender": "~1.0.0-rc.70"
+  }
+}

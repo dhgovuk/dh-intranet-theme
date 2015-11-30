@@ -1,0 +1,269 @@
+/* Admin styling */
+
+fieldset label{
+	display:block;
+	width:100%;
+}
+
+fieldset span {
+	display:block;
+	padding:5px 0px;
+	width:320px;
+	float:left;
+	min-height:20px;
+	margin-right:20px; 
+}
+
+fieldset span label {
+	width:300px;
+	float:right;
+	line-height:20px;
+}
+
+fieldset span input[type="checkbox"] {
+	float:left;
+	margin-top:2px;
+}
+
+/* Front end styling */
+
+ul.orderList li {
+	display: block;
+	width:100%;
+	overflow:hidden;
+}
+
+ul.orderList li span {
+	float:left;
+	width:300px;
+}
+
+.wrap .dhCats .catRow {
+	position: relative;	
+	overflow: hidden;
+}
+
+.wrap .dhCats .catRow a.button {
+	display:none;
+	background:#0090e7;
+}
+
+.wrap .dhCats ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	position:relative;
+	overflow:hidden;
+}
+
+.wrap .dhCats ul li {
+	width:180px;
+	float:left;
+	margin-right:30px;
+	min-height:50px;
+}
+
+.wrap .dhCats ul li.buttons {
+	width:40px;
+	margin-right:0px; 
+}
+
+.wrap .dhCats ul li:last-of-type a.more {
+	display:block; 
+	color:#41484c;
+	text-align:center;  
+	width: 0px;
+	height: 40px;
+	border-style: solid;
+	border-width: 20px 0 20px 20px;
+	border-color: transparent transparent transparent #8D8D8D;
+	text-decoration:none;
+} 
+
+.wrap .dhCats ul li:last-of-type a.more.off{
+	border-color: transparent transparent transparent #E6E6E6;
+	cursor:default;
+}
+
+.wrap .dhCats ul li:last-of-type a.less {
+	display:block; 
+	color:#41484c;
+	text-align:center;  
+	width: 0px;
+	height: 40px;
+	border-style: solid;
+	border-width: 20px 20px 20px 0px;
+	border-color: transparent #8D8D8D transparent transparent;
+	text-decoration:none;
+	margin-top:20px;
+}
+
+.wrap .dhCats ul li:last-of-type a.less.off{
+	border-color: transparent #E6E6E6 transparent transparent;
+	cursor:default;
+}
+
+.wrap .dhCats ul li div {
+	width:100%;
+	height:120px;
+	position:relative;
+	overflow:hidden;
+	margin-bottom:10px;
+	background:#e6e6e6;
+}
+
+.wrap .dhCats ul li div img{
+	width:100% !important;
+	height:auto !important;
+	display:block;
+	margin:0px auto;
+}
+
+.wrap .dhCats ul li div a{
+	position:absolute;
+	z-index:2;
+	right:10px;
+	top:10px;
+	text-align:center;
+	color:white;
+	background:#007ac3;
+	height:37px;
+	width:40px;
+	line-height:37px; 
+}
+
+.wrap .dhCats ul li div a:hover {
+	color:white;
+	text-decoration:none; 
+}
+
+.wrap .dhCats ul li div a:after {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	left: 10px;
+	content:"";
+	border-top: 10px solid #007ac3;
+	border-right: 10px solid transparent;
+	display:block;
+	top:37px;
+}
+
+.wrap .dhCats ul li small {
+	display:block;
+}
+
+@media screen and (max-width:1280px) {
+	.wrap .dhCats ul li.post {
+		width:150px;
+	}
+}
+
+@media screen and (max-width:1080px) {
+	.wrap .dhCats ul li.post {
+		width:120px;
+	}
+}
+
+@media screen and (max-width: 990px) {
+
+	.wrap .dhCats ul {
+		width:100% !important;
+	}
+
+	.wrap .dhCats ul li:nth-of-type(5){
+		margin-bottom:0px;
+	}
+
+	.wrap .dhCats ul li a.more,.wrap .dhCats ul li a.less{
+		display:none !important;
+	}
+
+	.wrap .dhCats ul li.post {
+		width:50%;
+		padding-right:15px;
+		margin-right:0px;
+		height:auto !important;
+		margin-bottom:30px;
+		box-sizing:border-box;
+	}
+
+	.wrap .dhCats ul li:nth-of-type(even) {
+		padding-left:15px;
+		padding-right:0px;
+	}
+
+	.wrap .dhCats ul li:nth-of-type(3){
+		clear:left;
+	}
+
+	.wrap .dhCats ul li div {
+		width:100%;
+		height:200px;
+		position:relative;
+		overflow:hidden;
+		margin-bottom:10px;
+	}
+
+	.wrap .dhCats .catRow a.button {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 640px) {
+
+	.wrap .dhCats ul li.post {
+		width:100%;
+		margin-right:0px;
+		padding-right:0px;
+		box-sizing:initial;
+	}
+
+	.wrap .dhCats ul li:nth-of-type(even) {
+		padding-left:0px;
+	}
+
+	.wrap .dhCats ul li div {
+		height:400px;
+	}
+
+	.wrap .dhCats ul li:nth-of-type(3){
+		clear:none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.wrap .dhCats ul li div {
+		height:300px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+
+	.wrap .dhCats ul li div {
+		height:240px;
+	}
+}
+
+@media screen and (min-width:1359px) {
+	.wrap .dhCats ul li.post {
+		width:210px;
+	}
+
+	.wrap .dhCats ul li div {
+		height:180px;
+	}
+
+}
+
+@media screen and (min-width:1599px) {
+	.wrap .dhCats ul li.post {
+		width:240px;
+	}
+
+	.wrap .dhCats ul li div {
+		height:210px;
+	}
+
+}

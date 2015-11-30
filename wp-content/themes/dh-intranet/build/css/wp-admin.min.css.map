@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,yBAA0B;EACtB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,6DAA6D;EACzE,eAAe,EAAE,YAAY",
+"sources": ["../../assets/scss/wordpress/wp-admin.scss"],
+"names": [],
+"file": "wp-admin.min.css"
+}

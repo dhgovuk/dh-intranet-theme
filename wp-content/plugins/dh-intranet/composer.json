@@ -1,0 +1,17 @@
+{
+    "require": {
+        "aura/autoload": "~2.0",
+        "dxw/cidr": "dev-master",
+        "dxw/php-missing": "dev-master"
+    },
+    "require-dev": {
+        "10up/wp_mock": "dev-master",
+        "phpunit/phpunit": "4.8.*",
+        "dxw/phar-install": "dev-master"
+    },
+    "autoload": {
+      "psr-4": {
+        "DHIntranetPlugin\\": "src/"
+      }
+    }
+}

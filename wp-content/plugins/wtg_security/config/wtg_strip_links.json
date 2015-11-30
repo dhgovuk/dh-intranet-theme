@@ -1,0 +1,11 @@
+{
+	"domain_removals": [
+		"ims.gov.uk", "showa-internal.doh.gov.uk", "iws.ims.gov.uk", "dhinfo.doh.gov.uk", "dhsrvmds453.doh.gov.uk"
+	],
+	"mailto_removals" : [
+		"all"
+	],
+	"sharepoint_removals" : [
+
+	]
+}

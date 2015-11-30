@@ -1,0 +1,41 @@
+header {
+	position:relative;
+}
+
+header span {
+	display:block;
+	top:0px;
+	right:0px;
+	width:200px;
+	position:relative; 
+	min-height:30px;
+	z-index:1;
+	float:right;
+	cursor:pointer;
+	text-align:center;
+	line-height:30px;
+	background: #008f7a;
+	color: white;
+}
+header span ul.subscriptionButtons {
+	color: transparent;
+}
+
+header span ul.subscriptionButtons {
+	display:none;
+}
+
+header span:hover ul.subscriptionButtons {
+	position:absolute;
+	top:30px;
+	right:0px;
+	float:right;
+	display:block;
+	background:white;
+	padding:10px;
+	width:200px;
+}
+
+header span ul.subscriptionButtons li {
+	text-align:left;
+}

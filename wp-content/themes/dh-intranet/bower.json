@@ -1,0 +1,14 @@
+{
+  "name": "DH Intranet WordPress theme",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "respond": "~1.4.2",
+    "jquery": "~1.11.3",
+    "bootstrap-big-grid": "~0.2.0",
+    "jsrender": "~1.0.0-beta",
+    "jquery-accessibleMegaMenu": "https://github.com/adobe-accessibility/Accessible-Mega-Menu.git",
+    "enquire": "~2.1.2",
+    "bourbon": "latest",
+    "neat": "latest"
+  }
+}

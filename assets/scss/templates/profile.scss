@@ -1,0 +1,44 @@
+// Styles for wtg-profile
+
+.profile {
+
+ .rich-text article ul li, .rich-text ul li {
+    list-style: none;
+    margin: 0 0 $margin;
+  }
+
+  label {
+    display: block;
+    padding: 0 0 ($padding)/4 0;
+  }
+
+  .subscriptions {
+
+    li {
+      clear: both;
+    }
+
+    input {
+      float: left;
+      margin: 7px 7px 0 0;
+    }
+
+    label {
+      float: left;
+    }
+  }
+
+  #pass1-text {
+    margin: $margin/2 0 0;
+  }
+
+  .newsletter-categories {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+
+  .cta {
+    clear: both;
+  }
+
+}

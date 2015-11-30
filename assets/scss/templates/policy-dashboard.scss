@@ -1,0 +1,69 @@
+.policy-dashboard {
+  background: $light-grey;
+  padding: $padding;
+
+  .form-group {
+    margin: 0;
+  }
+
+  label {
+    font-size: $base-font-size*1.618;
+    font-weight: bold;
+  }
+
+  select {
+    float: left;
+    padding: 5px;
+    font-size: 16px;
+    margin: 1px ($margin)/2 0 0;
+  }
+
+  .dummy-label {
+    padding: 0 $padding;
+    font-size: 14px;
+  }
+
+  .button {
+    margin: $margin 0 0;
+  }
+
+}
+
+.show-recomended-link {
+  margin: $margin 0;
+  padding: ($padding)/2;
+}
+
+.policy-step {
+  margin: $margin 0;
+  padding: $padding;
+  border: 2px solid $medium-grey;
+
+  .policy-step-more {
+    display: none; // Refactor the JS so this can be removed
+  }
+
+  .watch-action {
+    display: none;
+  }
+
+  .policy-priority {
+    float: right;
+    color: $white;
+    padding: 5px 10px;
+  }
+
+  .style-must-do {
+    background: $red;
+  }
+
+  .style-recommended {
+    background: $orange;
+  }
+
+  .tab {
+    padding: ($padding)/2 0 0;
+  }
+
+
+}

@@ -1,0 +1,49 @@
+.tabs {
+    padding: 0 0 ($padding)*2 0;
+}
+
+.tabs-navigation {
+    position: absolute;
+    right: 0;
+    top: 20px;
+
+    li {
+        display: inline-block;
+
+        a {
+            margin: 0 0 0 ($margin)/2;
+        }
+
+        a.selected {
+            color: $black;
+            font-size: $base-font-size*1.618;
+            border-bottom: 2px solid $input-border;
+        }
+
+        &:first-child a {
+            margin: 0 ($margin)/2 0 0;
+        }
+    }
+}
+
+.policy-tabs-navigation {
+
+    li {
+        display: inline-block;
+
+        a {
+            font-weight: bold;
+            margin: 0 0 0 ($margin)/2;
+        }
+
+        a.selected {
+            color: $black;
+            font-size: $base-font-size*1.618;
+            border-bottom: 2px solid $input-border;
+        }
+
+        &:first-child a {
+            margin: 0 ($margin)/2 0 0;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "acf-options-page": {
+        "repository": "git@git.dxw.net:wordpress-plugins/acf-options-page",
+        "revision": "master",
+        "commit": "34ea02cb73960e3f52dcceea23e039cc82efe5ab"
+    },
+    "acf-repeater": {
+        "repository": "git@git.dxw.net:wordpress-plugins/acf-repeater",
+        "revision": "master",
+        "commit": "4e3bc8818b85cbcdafd8a412a0dcb8a844b255a7"
+    },
+    "advanced-custom-fields": {
+        "repository": "git@git.dxw.net:wordpress-plugins/advanced-custom-fields",
+        "revision": "master",
+        "commit": "9929859845b5b97ac80422f343403ac7bd79b29d"
+    },
+    "akismet": {
+        "repository": "git@git.dxw.net:wordpress-plugins/akismet",
+        "revision": "master",
+        "commit": "dac10e4f64aedb2204df025c58f71bfa1dd4f0ff"
+    },
+    "cms-page-order": {
+        "repository": "git@git.dxw.net:wordpress-plugins/cms-page-order",
+        "revision": "master",
+        "commit": "f0cf1394e926299e4fb7b71ba6efc3cda2a84937"
+    },
+    "cms-tree-page-view": {
+        "repository": "git@git.dxw.net:wordpress-plugins/cms-tree-page-view",
+        "revision": "master",
+        "commit": "ad22d785f6479ebf504505d465868566a82ad3c5"
+    },
+    "contact-form-7": {
+        "repository": "git@git.dxw.net:wordpress-plugins/contact-form-7",
+        "revision": "master",
+        "commit": "9ec58a0421a911323fbed0258215108ec35943a9"
+    },
+    "members": {
+        "repository": "git@git.dxw.net:wordpress-plugins/members",
+        "revision": "master",
+        "commit": "712f71c43528008eb5063ac6654c9380b63f3212"
+    },
+    "post-tags-and-categories-for-pages": {
+        "repository": "git@git.dxw.net:wordpress-plugins/post-tags-and-categories-for-pages",
+        "revision": "master",
+        "commit": "d39db457823133e2e61f8e3753e0faf3457c9193"
+    },
+    "relevanssi": {
+        "repository": "git@git.dxw.net:wordpress-plugins/relevanssi",
+        "revision": "master",
+        "commit": "7c9f0d2a83b48672ec44bf189a8b54c39fada96d"
+    },
+    "simple-page-ordering": {
+        "repository": "git@git.dxw.net:wordpress-plugins/simple-page-ordering",
+        "revision": "master",
+        "commit": "a084ac3816b63236173220dd953e352c31322260"
+    },
+    "stop-user-enumeration": {
+        "repository": "git@git.dxw.net:wordpress-plugins/stop-user-enumeration",
+        "revision": "master",
+        "commit": "7afdc5953459d0ca2b56b11b17cda9579ed9ca7a"
+    },
+    "tinymce-advanced": {
+        "repository": "git@git.dxw.net:wordpress-plugins/tinymce-advanced",
+        "revision": "v4.0.1",
+        "commit": "e4a3c3ec4e90037965014bdbb98b69eb95e0bf51"
+    }
+}

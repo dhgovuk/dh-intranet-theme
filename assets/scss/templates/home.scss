@@ -1,0 +1,359 @@
+$top-tasks-link: $brand-primary;
+$top-tasks-hover: $brand-secondary;
+
+.home {
+
+    .search-form {
+        background: $brand-secondary;
+        position: relative;
+        @include pad(1.178825%);
+
+        &:after {
+            @include arrow-down (15px, $brand-secondary);
+            position: absolute;
+            bottom: -12px;
+            left: 15px;
+        }
+
+        label {
+            color: $white;
+            font-size: $base-font-size*1.618;
+            @include span-columns(2 of 12);
+            line-height: 30px;
+            font-weight: bold;
+
+            @media screen and (max-width: $medium-screen) {
+                font-size: $base-font-size*1.076;
+            }
+        }
+
+        input[type=search] {
+            border: 2px solid $white;
+            @include span-columns(9 of 12);
+            @media screen and (max-width: $medium-screen) {
+                @include span-columns(8 of 12);
+            }
+        }
+
+        button {
+            position: relative;
+            top: -2px;
+            margin: 0;
+            text-indent: -9999em;
+            font-size: 0;
+            padding: ($padding)/2;
+            background: url("#{$imagePath}/icon-search.png") no-repeat 50% 50%;
+        }
+    }
+
+    .top-tasks {
+        background: $light-grey;
+        padding: 1.178825% 2.35765%;
+        margin: 0 0 $margin 0;
+        @media screen and (max-width: $medium-screen) {
+            @include pad(default);
+        }
+
+        h4 {
+            color: $dark-grey;
+            margin: 0;
+        }
+
+        ul {
+            display: none;
+        }
+
+        .opened {
+            display: block;
+        }
+
+        li {
+            display: inline;
+
+            a {
+                @include span-columns(4);
+                display: block;
+                float: left;
+                color: $top-tasks-link;
+
+                @media screen and (max-width: $medium-screen) {
+                    @include span-columns(12);
+                }
+
+                &:hover {
+                    color: $top-tasks-hover;
+                }
+            }
+        }
+    }
+
+    .front-page-main {
+        @include span-columns(9);
+
+        @media screen and (max-width: $big-screen) {
+            @include span-columns(8);
+        }
+
+        @media screen and (max-width: $medium-screen) {
+            @include span-columns(12);
+        }
+
+        h3 {
+            font-size: $base-font-size*1.076;
+        }
+    }
+
+    .homepage-story-sticky {
+            @include span-columns(4 of 8);
+
+            @media screen and (max-width: $big-screen) {
+               @include span-columns(12);
+            }
+
+        .rich-text h3 {
+            font-size: $base-font-size*1.618;
+        }
+    }
+
+    .non-sticky-news {
+        @include span-columns(4 of 8);
+        @include omega;
+
+        @media screen and (max-width: $big-screen) {
+            @include span-columns(12);
+        }
+    }
+
+    .homepage-story {
+        margin: 0 0 $margin 0;
+
+        &.last-child {
+            margin: 0;
+        }
+
+        @media screen and (max-width: $big-screen) {
+            @include span-columns(4 of 8);
+        }
+
+        figure, .rich-text {
+            @include span-columns(2 of 4);
+            @media screen and (max-width: $big-screen) {
+                @include span-columns(12);
+            }
+        }
+        .rich-text {
+            @include span-columns(2 of 4);
+            @media screen and (max-width: $big-screen) {
+                @include span-columns(12);
+            }
+            h3 {
+                margin-top: 0;
+            }
+        }
+    }
+
+    figure {
+        position: relative;
+    }
+
+    article .meta {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: $brand-primary;
+        color: $white;
+        padding: 5px 15px;
+
+        a {
+            color: $white;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    article .meta:after {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        left: 10px;
+        bottom: -10px;
+        content: "";
+        border-top: 10px solid $brand-primary;
+        border-right: 10px solid transparent;
+    }
+
+    .cta {
+        padding: ($padding)/2 0;
+        clear: both;
+        text-align: right;
+    }
+
+    .dh-life-stories {
+        li {
+            @include span-columns(4 of 12);
+            @include omega(3n);
+            background: $dark-grey;
+            margin-bottom: $margin;
+
+            @media screen and (max-width: $medium-screen) {
+                @include span-columns(12);
+                @include omega();
+            }
+        }
+
+        h3 {
+            @include pad(default);
+            color: $white;
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .entry figure img {
+        width: 100%;
+    }
+
+}
+
+.homepage-events {
+
+  .event-item {
+    @include span-columns(4 of 8);
+    @include omega(2n);
+    margin-bottom: $margin;
+
+    @media screen and (max-width: $medium-screen) {
+        @include span-columns(12);
+        @include omega();
+    }
+  }
+
+  .event-date {
+    background: $brand-tertiary;
+    @include span-columns(3);
+    text-align: center;
+    padding: ($padding)/2;
+    font-size: $base-font-size*1.076;
+    font-weight: bold;
+  }
+
+  .event-info {
+    @include span-columns(9);
+
+    h3 {
+      margin-top: 0;
+    }
+
+    strong {
+      font-weight: bold;
+      display: block;
+    }
+  }
+}
+
+.home .sidebar {
+    @include span-columns(3);
+    @include omega();
+
+    @media screen and (max-width: $big-screen) {
+        @include span-columns(4);
+    }
+
+    @media screen and (max-width: $medium-screen) {
+        @include span-columns(12);
+    }
+
+    .widget {
+        margin: 0 0 $margin;
+    }
+
+    h3 {
+        font-size: $base-font-size*1.076;
+    }
+
+    h3, h4 {
+        background: $dark-grey;
+        color: $white;
+        padding: ($padding)/2;
+        margin: 0;
+    }
+
+    .page-review {
+        padding: 15px;
+    }
+
+    li {
+        border-bottom: 1px solid $light-medium-grey;
+        a {
+            display: block;
+            padding: 10px 15px;
+            color: $sidebar-link;
+            @include transition(all 0.2s ease-in-out);
+
+            &:hover {
+                background: $sidebar-link-background-hover;
+            }
+        }
+    }
+
+    .todo-list {
+        strong {
+            font-weight: bold;
+            display: block;
+        }
+        .active {
+            background: $brand-tertiary;
+            strong span {
+                font-size: $base-font-size*1.618;
+                display: block;
+            }
+        }
+    }
+
+    .your-building {
+        select {
+            margin: 0 0 0 $margin;
+        }
+    }
+}
+
+
+.homepage-events {
+
+  .event-item {
+    @include span-columns(4 of 8);
+    @include omega(2n);
+    margin-bottom: $margin;
+
+    @media screen and (max-width: $medium-screen) {
+        @include span-columns(12);
+        @include omega();
+    }
+  }
+
+  .event-date {
+    background: $brand-tertiary;
+    @include span-columns(3);
+    text-align: center;
+    padding: ($padding)/2;
+    font-size: $base-font-size*1.076;
+    font-weight: bold;
+  }
+
+  .event-info {
+    @include span-columns(9);
+
+    h3 {
+      margin-top: 0;
+    }
+
+    strong {
+      font-weight: bold;
+      display: block;
+    }
+  }
+
+}

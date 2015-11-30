@@ -1,0 +1,33 @@
+{
+	"registration_blocked" : "You cannot register unless you are within the Department Of Health's network",
+	"registration_blocked_original" : "User registration is currently not allowed.",
+	"registration_email_blocked" : "You cannot register with that email address domain.",
+	"registration_button" : "Sign up",
+	"registration_login_email_label" : "Work e-mail",
+    "auth_incorrect" : "Email address or password not recognised.",
+    "auth_strings_to_replace_find" : [
+        "For This Site",
+        "E-mail",
+        "username",
+        "Log In",
+        "Back to %s",
+        "Registration complete. Please check your e-mail."
+    ],
+    "auth_strings_to_replace_replace" : [
+        "for this site",
+        "Work e-mail",
+        "work e-mail address",
+        "Sign in",
+        "Continue without signing in.",
+        "Thank you for registering.  Please check your email for your temporary intranet password which should arrive in the next few minutes."
+
+    ],
+    "login_username_replace" : {
+        "find" : "Username",
+        "replace" : "Work e-mail address"
+    },
+    "login_back_to_replace" : {
+        "find" : "Back to",
+        "replace" : "Continue without signing in"
+    }
+}

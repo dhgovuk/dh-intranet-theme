@@ -1,0 +1,46 @@
+.events-single {
+
+  .meta {
+    margin: 0 0 $margin;
+  }
+}
+
+.events-aggregation {
+  @include outer-container(100%);
+
+  .event-item {
+    @include span-columns(4);
+    min-height: 140px;
+
+    @media screen and (max-width: $medium-screen) {
+      @include span-columns(12);
+      @include omega();
+    }
+  }
+
+  .event-date {
+    background: $brand-tertiary;
+    @include span-columns(1 of 4);
+    text-align: center;
+    padding: ($padding)/2;
+    font-size: $base-font-size*1.076;
+    font-weight: bold;
+  }
+
+  .event-content {
+    padding: 0 ($padding)/2;
+    @include span-columns(3 of 4);
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: $base-font-size;
+  }
+
+
+
+}

@@ -1,0 +1,6 @@
+{
+	"default_messages" :
+	{
+		"registration_message" : "You may sign up to access the Intranet when you are out of the office by entering your work email address and a username above and clicking \"Sign up\".  Please note, your work email address will be used for signing in, however a username is required for account creation purposes.\n If you are involved in producing content for the Intranet, please sign up and advise the Internal Communications team who will give you the required access.\n Please use your full name and your work email address when signing up.\n The password needs to be at least 8 characters long, with three out of four of an upper case letter, a lower case letter, a number or a special character.\n"
+	}
+}
