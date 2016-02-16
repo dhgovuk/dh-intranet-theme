@@ -39,3 +39,6 @@ include __DIR__.'/../lib/tasks.php';
 include __DIR__.'/../lib/event-listings.php';
 include __DIR__.'/../lib/helpers.php';
 include __DIR__.'/../lib/it-updates.php';
+include __DIR__.'/../lib/options-settings.php';
+
+\DHIntranet\LoginCookieDuration::register();

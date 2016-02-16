@@ -20,10 +20,12 @@ class Search
             return;
         }
 
-        if (isset($this->get['exclude-news']) && $this->get['exclude-news'] === 'yes') {
-            $query->set('post_type', ['page', 'event']);
-        } else {
-            $query->set('post_type', ['post', 'page', 'event']);
+        $types = ['page', 'event', 'todo-item', 'local-news'];
+
+        if (!isset($this->get['exclude-news']) || !$this->get['exclude-news'] === 'yes') {
+            $types[] = 'post';
         }
+
+        $query->set('post_type', $types);
     }
 }

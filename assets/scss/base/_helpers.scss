@@ -26,6 +26,12 @@
     border-top: $size solid $colour;
 }
 
+@mixin ghost-button ($colour) {
+    background: transparent;
+    border: 2px solid $colour;
+    color: $colour;
+}
+
 
 @media screen and (max-width: $medium-screen) {}
 @media screen and (max-width: $small-screen) {}

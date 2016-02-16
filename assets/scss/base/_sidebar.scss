@@ -1,12 +1,10 @@
 $sidebar-heading-text: $white;
-
 $sidebar-link: $nearly-black;
 $sidebar-link-hover: $nearly-black;
-$sidebar-link-background-hover: $brand-tertiary;
+$sidebar-link-background-hover: $brand-secondary;
 
 .page .sidebar {
     @include span-columns(4);
-    margin-top: ($margin)*2;
 
      @media screen and (max-width: $medium-screen) {
         @include span-columns(12);

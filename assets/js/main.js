@@ -1,5 +1,26 @@
 jQuery(function ($) {
 
+      jQuery(function(){
+
+        enquire.register('screen and (min-width:500px)', { // jshint ignore:line
+          match : function() {
+            // Main Nav
+            $('.menu-main-container').accessibleMegaMenu({
+              uuidPrefix: 'accessible-nav',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            });
+          },
+          unmatch : function() {}
+        });
+
+      });
+
     // Extend jQuery to make a toggle text function.
     jQuery.fn.extend({
         toggleText: function(stateOne, stateTwo) {
@@ -12,33 +33,25 @@ jQuery(function ($) {
 
     // Navigation Toggle
     jQuery(function(){
-        $("#js-navigation-toggle").click(function(){
-            $(this).toggleText("Close","Menu");
-            $("#js-navigation").toggleClass("opened");
-        });
-    });
-
-    // Top Tasks Toggle
-    jQuery(function(){
-        $("#js-top-tasks-toggle").click(function(){
-            $(this).find("span").toggleText("Hide","Show");
-            $(".top-tasks ul").toggleClass("opened");
+        $('#js-navigation-toggle').click(function(){
+            $(this).toggleText('Close','Menu');
+            $('#js-navigation').toggleClass('opened');
         });
     });
 
     // Super simple tabs
     jQuery(function(){
-        var tabs = $(".tab");
-        tabs.hide().filter(":first").attr("aria-hidden","true").show();
-        var tabsnav = $(".tabs-navigation li a, .policy-tabs-navigation li a");
+        var tabs = $('.tab');
+        tabs.hide().filter(':first').attr('aria-hidden','true').show();
+        var tabsnav = $('.campaign-tabs-navigation li a, .tabs-navigation li a, .policy-tabs-navigation li a');
 
         tabsnav.click(function(){
-            tabs.hide().attr("aria-hidden","true");
-            tabs.filter(this.hash).attr("aria-hidden","false").show();
-            tabsnav.removeClass("selected").attr("aria-expanded","false");
-            $(this).addClass("selected").attr("aria-expanded","true");
+            tabs.hide().attr('aria-hidden','true');
+            tabs.filter(this.hash).attr('aria-hidden','false').show();
+            tabsnav.removeClass('selected').attr('aria-expanded','false');
+            $(this).addClass('selected').attr('aria-expanded','true');
             return false;
-        }).filter(":first").click().attr("aria-expanded","true");
+        }).filter(':first').click().attr('aria-expanded','true');
     });
 
     /*
@@ -48,15 +61,15 @@ jQuery(function ($) {
     {
         //Get phase to reopen.
         var cookieData = getCookie('PTK-phase');
-        if (cookieData !== "") {
-            $("#policy-stage-select").val(cookieData);
+        if (cookieData !== '') {
+            $('#policy-stage-select').val(cookieData);
             showSteps();
         }
 
         //Get stepIDs to reopen.
         cookieData = getCookie('PTK-openstep');
-        if (cookieData !== "") {
-            var stepsArray = cookieData === "" ? [] : JSON.parse(cookieData);
+        if (cookieData !== '') {
+            var stepsArray = cookieData === '' ? [] : JSON.parse(cookieData);
             for (var i = stepsArray.length - 1; i >= 0; i--) {
                 expandStep(stepsArray[i]);
             }
@@ -64,7 +77,7 @@ jQuery(function ($) {
 
         //Remember if recommended steps were showen
         cookieData = getCookie('PTK-recommended');
-        if (cookieData !== "") {
+        if (cookieData !== '') {
             if (cookieData === 'yes') {
                 toggleShowRecommendedSteps();
             }
@@ -76,7 +89,7 @@ jQuery(function ($) {
      */
     $('#showsteps').click(function(event) {
         //Save in a cookie so we can restore the view between sessions
-        setCookie('PTK-phase', $("#policy-stage-select").val(), 24*30); //30 days.
+        setCookie('PTK-phase', $('#policy-stage-select').val(), 24*30); //30 days.
         showSteps();
         return false;
     });
@@ -89,11 +102,11 @@ jQuery(function ($) {
         //hide all boxes
         $('.policy-step').hide();
         //show the one selected in the dropdown
-        $('.policy-step.'+$("#policy-stage-select").val()+'-must-do').fadeToggle(200);
+        $('.policy-step.'+$('#policy-stage-select').val()+'-must-do').fadeToggle(200);
 
         //if the show recommended had been clicked before then do show them
         if ($('#show-recommended-steps').data('clicked')) {
-            $('.policy-step.' + $("#policy-stage-select").val() + '-recommended').slideToggle(200);
+            $('.policy-step.' + $('#policy-stage-select').val() + '-recommended').slideToggle(200);
         }
         //suppress default behaviour.
         return false;
@@ -106,7 +119,7 @@ jQuery(function ($) {
     {
         var stepID = $(this).attr('data');
         var cookieData = getCookie('PTK-openstep');
-        var stepsArray = cookieData === "" ? [] : JSON.parse(cookieData);
+        var stepsArray = cookieData === '' ? [] : JSON.parse(cookieData);
         if ($('.'+stepID).data('clicked')) {
             //Remove all instance of this step id from the array
             //NOTE: forEach not supported by IE8
@@ -125,7 +138,7 @@ jQuery(function ($) {
      */
     function expandStep(stepID)
     {
-        $('.'+stepID).next(".expanded-step-box").slideToggle(100);
+        $('.'+stepID).next('.expanded-step-box').slideToggle(100);
         //update the glyph
         if ($('.'+stepID).data('clicked')) {
             $('.'+stepID).find('.policy-step-more').html('More');
@@ -154,7 +167,7 @@ jQuery(function ($) {
      */
     function toggleShowRecommendedSteps()
     {
-        $('.policy-step.'+$("#policy-stage-select").val()+'-recommended').slideToggle(200);
+        $('.policy-step.'+$('#policy-stage-select').val()+'-recommended').slideToggle(200);
 
         if ($('#show-recommended-steps').data('clicked')) {
             $('#show-recommended-steps').text('Show recommended steps');
@@ -166,22 +179,21 @@ jQuery(function ($) {
 
 
     //make modalboxs cature tab input
-    $("#lastInput").blur(function() {
-        $("#firstInput").focus();
+    $('#lastInput').blur(function() {
+        $('#firstInput').focus();
     });
-
-
-
 
     /**
      * dismiss the emergency message and track which ones closed
      */
+     /*
     $('.close_button').click(function()
     {
         $(this).parent().fadeTo('slow', 0).slideUp();
-        var temp = $(this).attr("data-post-hash");
+        var temp = $(this).attr('data-post-hash');
         setCookie('eMsg-'+temp,'true',9)
     })
+    */
 
 
     /**
@@ -192,23 +204,23 @@ jQuery(function ($) {
     {
         var d = new Date();
         d.setTime(d.getTime()+(exhours*60*60*1000));
-        var expires = "expires="+d.toGMTString();
-        document.cookie = cname+"="+cvalue+"; "+expires+"; path=/";
+        var expires = 'expires='+d.toGMTString();
+        document.cookie = cname+'='+cvalue+'; '+expires+'; path=/';
     }
     function getCookie(cname) {
-        var name = cname + "=";
+        var name = cname + '=';
         var ca = document.cookie.split(';');
         for(var i=0; i<ca.length; i++) {
             var c = ca[i];
             while (c.charAt(0)===' ') c = c.substring(1);
             if (c.indexOf(name) !== -1) return c.substring(name.length,c.length);
         }
-        return "";
+        return '';
     }
 
     //expand to show casestudy on policy article page
     $('.show-casestudy-button').click(function() {
-        $(this).next(".show-casestudy-box").slideToggle(100);
+        $(this).next('.show-casestudy-box').slideToggle(100);
         //rip .toggle depeciated in jq1.9
         $(this).data('clicked',!$(this).data('clicked'));
         if ($(this).data('clicked')) {
@@ -219,9 +231,12 @@ jQuery(function ($) {
     });
 
     //do we still need this.
+
+    /*
     $('[data-toggle=offcanvas]').click(function() {
         $('.row-offcanvas').toggleClass('active');
     });
+    */
 
     /**
      * Admin bar
@@ -259,29 +274,30 @@ jQuery(function ($) {
         })
     })
 
-
     /**
      * show any emergency messages that haven't been dismissed
      */
     var eMsgCookie;
     var postCookieName;
-    $(".emergency-message").each(function()
+    $('.emergency-message').each(function()
     {
         postCookieName = $(this).attr('data-post-cookie');
         eMsgCookie = getCookie(postCookieName);
         if (eMsgCookie !== 'true')
             {
-                $( this ).css("display", "block");
+                $( this ).css('display', 'block');
             }
     })
 
 
     // Adding last-child class because IE8 doesn't support :last-child selector
-    $('*:last-child').addClass('last-child');
+    // $('*:last-child').addClass('last-child');
 
     // Make placeholder appear on IE
+    // don't think this is needed maybe safe to remove AS
+    /*
     $(function() {
-        var input = document.createElement("input");
+        var input = document.createElement('input');
         if(('placeholder' in input)===false) {
             $('[placeholder]').focus(function() {
                 var i = $(this);
@@ -310,14 +326,13 @@ jQuery(function ($) {
             });
         }
     });
+    */
 
     $('.js-exclude-news').click(function(e) {
         if (typeof window.ga !== 'undefined') {
             var action = this.checked ? 'CheckExcludeNewsCheckbox' : action = 'UncheckExcludeNewsCheckbox'
-
             window.ga('send', 'event', 'Search', action)
         }
-
         this.form.submit()
     })
 })

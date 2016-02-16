@@ -1,139 +1,107 @@
 // Header
+
+$header-links: $white;
+
 .header {
+    background: $brand-primary;
 
-    .nav-toggle {
-        @include hide;
-        color: $white;
-        float: left;
-        margin: 0 0 0 36px;
-        cursor: pointer;
-
-        &:before {
-            position: absolute;
-            content: "";
-            width: 24px;
-            height: 24px;
-            background: url("#{$imagePath}/icon-menu.svg") 50% 50% no-repeat;
-            left: -30px;
-        }
-
-        @media screen and (max-width: $medium-screen) {
-            @include show;
-            position: relative;
-        }
+    .row {
+        position: relative;
     }
 
     .logo {
+        width: 400px;
+        margin: 30px 0 0 0;
+        float: left;
+
+        @media screen and (max-width: $medium-screen) {
+            width: 300px;
+        }
+
         img {
             max-width: 100%;
             display: block;
-
-            @media screen and (max-width: $medium-screen) {
-                @include hide;
-            }
         }
 
         h1 {
             @include hide;
-
-            @media screen and (max-width: $medium-screen) {
-                @include show;
-                float: right;
-                font-size: $base-font-size;
-                margin: 0 ($margin)/2 0 0;
-
-                a {
-                    color: $white;
-                }
-            }
+            margin: 0;
         }
     }
-}
 
-// Nav
-$nav-link: $nearly-black;
-$nav-link-hover: $nearly-black;
-$nav-link-background-hover: $light-medium-grey;
+    .search-form {
+        @include span-columns(5);
+        position: absolute;
+        top: 37px;
+        right: 0;
 
-.navigation {
-    margin: $margin 0 0;
-    clear: both;
+        @media screen and (max-width: $medium-screen) {
+            @include span-columns(8);
+            position: static;
+            margin: $margin 0;
+            float: right;
+        }
 
-    li {
-        border-bottom: 1px solid $light-medium-grey;
-        a {
-            display: block;
-            padding: 10px 15px;
-            color: $nav-link;
-            @include transition(all 0.2s ease-in-out);
+        label {
+            @include hide;
+        }
+
+        input[type=search] {
+            width: 80%;
+            border: 2px solid $white;
+
+            &:focus {
+                // box-shadow: 0 0 0 2px $dh-dark-green;
+                border: 2px solid $dh-dark-green;
+            }
+        }
+
+        button {
+            float: right;
+            width: 20%;
+            height: 35px;
+            background: $dh-dark-green;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+
+            img {
+                width: 18px;
+                height: auto;
+            }
+
+            span {
+                position: absolute;
+                left: -9999px;
+            }
 
             &:hover {
-                background: $nav-link-background-hover;
+                background-color: scale-color($dh-dark-green, $lightness: -50%);
             }
         }
     }
-}
 
+    .user-welcome {
+        float: right;
+        margin: 10px 0 0;
+        padding: 5px $padding/2 5px 0;
 
-@media screen and (max-width: $medium-screen) {
-    .navigation {
-        display: none;
+        @media screen and (max-width: $medium-screen) {
+            @include hide;
+        }
 
         li {
-            border: none;
-            a {
-                color: $medium-grey;
-                &:hover {
-                    color: $white;
-                    background: transparent;
-                }
-            }
+            list-style: none;
+            display: inline;
+            color: $header-links;
+            float: right;
         }
-    }
-
-    .navigation.opened {
-        display: block;
-    }
-}
-
-.top-navigation-bar {
-    clear: both;
-
-    li {
-        display: inline;
         a {
             display: block;
-            float: left;
-            padding: 5px 10px;
-            margin: 0 5px 0 0;
-            color: $nav-link;
-            @include transition(all 0.2s ease-in-out);
-
-            &:hover {
-                color: $nav-link-hover;
-            }
+            float: right;
+            margin: 0 0 0 $margin/2;
+            color: $header-links;
         }
     }
-}
 
-.sidebar-search-form {
-    .search-box {
-        border-color: $brand-secondary;
-        background: $brand-secondary;
-        margin: 0 0 $margin;
-        color: $white;
-        width: 100%;
-
-        &:focus {
-           border-color: $brand-secondary;
-        }
-
-        -webkit-search-cancel-button {
-            display: none;
-        }
-
-        -webkit-input-placeholder {
-            color: $white;
-        }
-    }
 }

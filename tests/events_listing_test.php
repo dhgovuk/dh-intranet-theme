@@ -55,18 +55,18 @@ class EventListingsTest extends PHPUnit_Framework_TestCase
                 'description' => 'During Group Operations Experience Week there will be various opportunities for staff to see how the directorate enables DH to deliver on its priorities as well as highlighting some of its products and services. This session ‘Meet the Senior Team’ will enable Tamara Finkelstein (Director General and Chief Operating Officer) and her directors to set out their key priorities and will be an opportunity for all DH staff to meet the directorate’s senior team and ask questions. Gerry Murphy, Chair of the DH Audit Committee, will also talk about his role, responsibilities and experience as both DH Audit Committee Chair',
             ],
             'expected' => '
-            <div class="row event_item">
-                <div class="border-bottom"><a href="https://in.dh.gov.uk/?post_type=event&#038;p=171534" title="Group Operations Experience Week – meet Tamara Finkelstein and the Senior Team – Burnley">Group Operations Experience Week – meet Tamara Finkelstein and the Senior Team – Burnley</a></div>
-                <div class="col-md-6">
-                    <p class="border-bottom"><strong>Start time:</strong> 12 October 2015 11:00</p>
-                    <p class="border-bottom"><strong>End time:</strong> 12 October 2015 12:30</p>
-                    <p class="border-bottom"><strong>Address:</strong> </p>
+            <article class="rich-text event-item">
+                <h2><a href="https://in.dh.gov.uk/?post_type=event&#038;p=171534" title="Group Operations Experience Week – meet Tamara Finkelstein and the Senior Team – Burnley">Group Operations Experience Week – meet Tamara Finkelstein and the Senior Team – Burnley</a></h2>
+                <ul class="event-meta">
+                    <li><strong>Start time:</strong> 12 October 2015 11:00</li>
+                    <li><strong>End time:</strong> 12 October 2015 12:30</li>
+                    <li><strong>Address:</strong> </li>
+                </ul>
+                <div class="article-content">
+                    <p>During Group Operations Experience Week there will be various opportunities for staff to see how the directorate enables DH to deliver on its priorities as well as highlighting some of its products and services. This session ‘Meet the Senior Team’ will enable Tamara Finkelstein (Director General and Chief Operating Officer) and her directors to set out their key priorities and will be an opportunity for all DH staff to meet the directorate’s senior team and ask questions. Gerry Murphy, Chair of the DH Audit Committee, will also talk about his role, responsibilities and experience as both DH Audit Committee Chair</p>
                 </div>
-                <div class="col-md-6">
-                    <p>During Group Operations Experience Week there will be various opportunities for staff to see how the directorate enables DH to deliver on its priorities as well as highlighting some of its products and services. This session ‘Meet the Senior Team’ will enable Tamara Finkelstein (Director General and Chief Operating Officer) and her directors to set out their key priorities and will be an opportunity for all DH staff to meet the directorate’s senior team and ask questions. Gerry Murphy, Chair of the DH Audit Committee, will also talk about his role, responsibilities and experience as both DH Audit Committee Chair&hellip;<a href="https://in.dh.gov.uk/?post_type=event&#038;p=171534" title="See more about Group Operations Experience Week – meet Tamara Finkelstein and the Senior Team – Burnley"> more </a></p>
-                </div>
-                <a href="https://in.dh.gov.uk/?post_type=event&#038;p=171534" title="Group Operations Experience Week – meet Tamara Finkelstein and the Senior Team – Burnley" class="btn btn-primary" style="float:right">See more</a>
-            </div>
+                <a href="https://in.dh.gov.uk/?post_type=event&#038;p=171534" title="Group Operations Experience Week – meet Tamara Finkelstein and the Senior Team – Burnley" class="button">See more</a>
+            </article>
             ',
         ],
         [
@@ -79,18 +79,18 @@ class EventListingsTest extends PHPUnit_Framework_TestCase
                 'description' => 'Just <b>cat</b> things',
             ],
             'expected' => '
-            <div class="row event_item">
-                <div class="border-bottom"><a href="https://in.dh.gov.uk/event/meow/" title="Group meowing">Group meowing</a></div>
-                <div class="col-md-6">
-                    <p class="border-bottom"><strong>Start time:</strong> 13 December 2015 14:15</p>
-                    <p class="border-bottom"><strong>End time:</strong> 13 December 2015 14:30</p>
-                    <p class="border-bottom"><strong>Address:</strong> 1 Cat Lane</p>
+            <article class="rich-text event-item">
+                <h2><a href="https://in.dh.gov.uk/event/meow/" title="Group meowing">Group meowing</a></h2>
+                <ul class="event-meta">
+                    <li><strong>Start time:</strong> 13 December 2015 14:15</li>
+                    <li><strong>End time:</strong> 13 December 2015 14:30</li>
+                    <li><strong>Address:</strong> 1 Cat Lane</li>
+                </ul>
+                <div class="article-content">
+                    <p>Just <b>cat</b> things</p>
                 </div>
-                <div class="col-md-6">
-                    <p>Just <b>cat</b> things&hellip;<a href="https://in.dh.gov.uk/event/meow/" title="See more about Group meowing"> more </a></p>
-                </div>
-                <a href="https://in.dh.gov.uk/event/meow/" title="Group meowing" class="btn btn-primary" style="float:right">See more</a>
-            </div>
+                <a href="https://in.dh.gov.uk/event/meow/" title="Group meowing" class="button">See more</a>
+            </article>
             ',
         ],
     ];
@@ -100,10 +100,16 @@ class EventListingsTest extends PHPUnit_Framework_TestCase
         foreach ($this->matrix as $test) {
             $e = new \DHIntranet\EventListings(true);
 
+            // Prevent errors being raised due to buggy HTML implementation
+            libxml_use_internal_errors(true);
+
             $_expected = new DOMDocument();
             $_expected->loadHTML($test['expected']);
             $_actual = new DOMDocument();
             $_actual->loadHTML($e->renderEvent($test['input']));
+
+            // Prevent errors
+            libxml_clear_errors();
 
             $this->assertEquals($this->_norm($_expected->saveHTML()), $this->_norm($_actual->saveHTML()));
         }
@@ -173,6 +179,52 @@ class EventListingsTest extends PHPUnit_Framework_TestCase
         \WP_Mock::wpFunction('get_post_meta', [
             'args' => [123, 'timezone', true],
             'return' => 'Europe/London',
+        ]);
+
+        $e = new \DHIntranet\EventListings(true);
+        $out = $e->getEventFromID(123);
+        $this->assertEquals('Meow', $out['title']);
+        $this->assertEquals('http://localhost/event/meow/', $out['link']);
+        $this->assertEquals('Cat things', $out['description']);
+        $this->assertEquals('Cat Kingdom, NW1', $out['address']);
+        $this->assertEquals('publish', $out['post_status']);
+        // Check that the local dates get converted to UTC
+        $this->assertEquals('2015-10-06 09:23:00 UTC', $out['start']);
+        $this->assertEquals('2015-10-06 10:00:00 UTC', $out['end']);
+    }
+
+    public function testGetEventFromIDWeirdTimezone()
+    {
+        \WP_Mock::wpFunction('get_post', [
+            'return' => (object) [
+                'post_content' => 'Cat things',
+                'post_status' => 'publish',
+            ],
+        ]);
+
+        \WP_Mock::wpFunction('get_post_meta', [
+            'args' => [123, 'start_date', true],
+            'return' => '2015-10-06 10:23:00',
+        ]);
+
+        \WP_Mock::wpFunction('get_post_meta', [
+            'args' => [123, 'end_date', true],
+            'return' => '2015-10-06 11:00:00',
+        ]);
+
+        \WP_Mock::wpFunction('get_post_meta', [
+            'args' => [123, 'venue', true],
+            'return' => 'Cat Kingdom',
+        ]);
+
+        \WP_Mock::wpFunction('get_post_meta', [
+            'args' => [123, 'adress', true],
+            'return' => 'NW1',
+        ]);
+
+        \WP_Mock::wpFunction('get_post_meta', [
+            'args' => [123, 'timezone', true],
+            'return' => 'Foo/Bar',
         ]);
 
         $e = new \DHIntranet\EventListings(true);

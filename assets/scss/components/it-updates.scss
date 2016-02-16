@@ -1,6 +1,20 @@
 // Widget in header
 
-.it-updates {
+.it-updates-widget {
+  margin: 10px 0;
+  float: right;
+  padding: 5px 10px;
+  background: $white;
+  border-radius: 25px;
+
+  @media screen and (max-width: $medium-screen) {
+    @include hide;
+  }
+
+  a {
+    color: $base-font-colour;
+  }
+
   span {
     text-indent: -9999em;
     height: 20px;
@@ -12,21 +26,22 @@
   }
 
   &.status-green span {
-    background: #a7cd45;
+    background: $dh-grass-green;
   }
 
   &.status-amber span {
-    background: #ffd32f;
+    background: $dh-yellow;
   }
 
   &.status-red span {
-    background: #eb2040;
+    background: $dh-red;
   }
 
 }
 
 // Table on page
 .it-status-table {
+
   th {
     text-align: left;
     font-weight: bold;

@@ -9,7 +9,8 @@
     "require-dev": {
         "10up/wp_mock": "dev-master",
         "phpunit/phpunit": "4.8.*",
-        "dxw/phar-install": "dev-master"
+        "dxw/phar-install": "dev-master",
+        "dxw/assertions": "dev-master"
     },
     "autoload": {
       "psr-4": {

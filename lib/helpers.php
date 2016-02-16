@@ -13,3 +13,8 @@ function getMonthName($month)
 {
     return \Missing\Dates::strftime('2000-'.$month.'-01', '%B', '', 'Etc/UTC');
 }
+
+function new_excerpt_length($length) {
+  return 20;
+}
+add_filter('excerpt_length', 'new_excerpt_length');

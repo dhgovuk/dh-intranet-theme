@@ -9,4 +9,18 @@
       }
     }
 
+    .content-feedback {
+        clear: both;
+
+        .hidden {
+            display: none;
+        }
+
+        .content-feedback-found-it-label {
+            color: #007ac3;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
 }

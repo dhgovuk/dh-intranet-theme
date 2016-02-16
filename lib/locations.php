@@ -133,7 +133,7 @@ function get_location_items()
             <a href="<?php echo esc_attr(get_permalink($item->ID)) ?>">
                 <?php if ($important) : ?>
                     <strong><?php echo esc_html(get_the_title($item->ID)) ?></strong>
-                    <span><?php echo esc_html(excerpt($item->post_content, 10)) ?></span>
+                    <span><?php echo esc_html(\DHIntranet\Pages::excerpt($item->post_content, 10)) ?></span>
                 <?php else : ?>
                     <?php echo esc_html(get_the_title($item->ID)) ?>
                 <?php endif ?>

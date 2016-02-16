@@ -6,7 +6,7 @@
     </header>
 
     <div class="breadcrumbs">
-      <?php the_breadcrumbs(); ?>
+      <?php \DHIntranet\Pages::the_breadcrumbs(); ?>
     </div>
 
     <div class="rich-text entry">

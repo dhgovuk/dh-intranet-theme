@@ -1,31 +1,21 @@
-$footer-text: $light-grey;
-$footer-link: $light-grey;
+$footer-text: $white;
+$footer-link: $white;
 $footer-link-hover: $brand-tertiary;
 
 .footer {
-    width: 80%;
-    float: right;
-    @include pad(30px default);
-    margin: 0 0 0 20%;
     background: $dark-grey;
     color: $footer-text;
+    clear: both;
 
-    @media screen and (max-width: $medium-screen) {
-        @include span-columns(12);
-        margin: 0;
-    }
-
-    h4 {
-        color: $footer-link;
+    .footer-navigation {
+        padding: $padding 0 0;
     }
 
     li {
         display: inline;
 
         a {
-            @include span-columns(4);
-            display: block;
-            float: left;
+            margin: 0 $margin 0 0;
             color: $footer-link;
 
             @media screen and (max-width: $medium-screen) {
@@ -40,8 +30,7 @@ $footer-link-hover: $brand-tertiary;
 
 
     .footer-message {
-        @include span-columns(12);
-        @include pad(30px 0);
+        padding: $padding 0;
 
         a {
             color: $footer-link;

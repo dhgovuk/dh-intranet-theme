@@ -2,6 +2,19 @@
 
 .profile {
 
+  .article {
+    @include span-columns(8);
+        clear: none;
+
+        @media screen and (max-width: $medium-screen) {
+         @include span-columns(12);
+      }
+  }
+
+  .rich-text article ul, .rich-text ul {
+    margin: 0;
+  }
+
  .rich-text article ul li, .rich-text ul li {
     list-style: none;
     margin: 0 0 $margin;

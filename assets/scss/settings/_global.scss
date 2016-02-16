@@ -2,42 +2,59 @@
 $imagePath: "../img";
 $fontPath: "../fonts";
 
-// Site Width
-$site-max-width: 1020px;
-
 // Breakpoints
-
-$big-screen: 1500px;
+$huge-screen: 1500px;
+$big-screen: 1300px;
 $medium-screen: 900px;
 $small-screen: 780px;
 $tiny-screen: 480px;
 
+// Site Width
+$row: $huge-screen;
+
 // Colours
 
-// Brand
-$brand-primary: #007ac3; // Blue
-$brand-secondary: #008f7a; // Green
-$brand-tertiary: #f4911d; // Orange
+// DH Brand
+$dh-green: #00ad93;
+$dh-blue: #0063be;
+$dh-coolgrey: #616265;
+$dh-red: #cc092f;
+$dh-orange: #e57200;
+$dh-dark-red: #8b2346;
+$dh-skyblue: #34b6e4;
+$dh-grass-green: #2eb135;
+$dh-dark-green: #006652;
+$dh-yellow: #ecac00;
+$dh-lavender: #cd66cc;
+$dh-purple: #512698;
+
+// Site Branding
+$brand-primary: $dh-green;
+$brand-secondary: $dh-blue;
+$brand-tertiary: $dh-orange;
 
 // Errors
-$highlight: #ffbf47;
-$error: #df3034;
+$highlight: $dh-red;
+$error: $dh-yellow;
 
-// Base Site
-$base-font-colour: #222222;
-$body-bg: #ffffff;
-$light-grey: #f8f8f8;
-$light-medium-grey: #e8e8e8;
-$medium-grey: #c8c8c8;
+// Site
+$base-font-colour: #313133;
+$body-background: #ffffff;
+$nearly-white: #dcdfe5;
+$light-grey: #c4c6cc;
+$light-medium-grey: #939499;
+$medium-grey: #7a7c80;
 $dark-grey: #616265;
-$nearly-black: #41484c;
-$black: #0b0c0c;
-$link-colour: $brand-primary;
-$link-hover-colour: $brand-secondary;
+$nearly-black: #494a4d;
+$black: #18191a;
+
+// Text Links
+$link-colour: $brand-secondary;
+$link-hover-colour: $brand-primary;
 
 // Buttons
-$button: $brand-primary;
-$button-inactive: scale-color($brand-primary, $lightness: 50%);
+$button: $brand-secondary;
+$button-inactive: scale-color($brand-secondary, $lightness: 50%);
 $button-hover: $brand-tertiary;
 $button-text: #fff;
 $button-text-hover: #fff;

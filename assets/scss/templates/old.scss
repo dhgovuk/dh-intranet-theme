@@ -1,0 +1,68 @@
+.home .sidebar {
+    @include span-columns(3);
+    @include omega();
+
+    @media screen and (max-width: $big-screen) {
+        @include span-columns(4);
+    }
+
+    @media screen and (max-width: $medium-screen) {
+        @include span-columns(12);
+    }
+
+    .widget {
+        margin: 0 0 $margin;
+    }
+
+    h3 {
+        font-size: $base-font-size*1.076;
+    }
+
+    h3, h4 {
+        background: $dark-grey;
+        color: $white;
+        padding: ($padding)/2;
+        margin: 0;
+    }
+
+    .page-review {
+        padding: 15px;
+    }
+
+    li {
+        border-bottom: 1px solid $light-medium-grey;
+        a {
+            display: block;
+            padding: 10px 15px;
+            color: $sidebar-link;
+            @include transition(all 0.2s ease-in-out);
+
+            &:hover {
+                background: $sidebar-link-background-hover;
+            }
+        }
+    }
+
+    .todo-list {
+        strong {
+            font-weight: bold;
+            display: block;
+        }
+        .active {
+            background: $brand-tertiary;
+            strong span {
+                font-size: $base-font-size*1.618;
+                display: block;
+            }
+        }
+    }
+
+    .your-building {
+        select {
+            margin: 0 0 0 $margin;
+        }
+        .title {
+           background: $brand-tertiary;
+        }
+    }
+}

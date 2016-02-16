@@ -1,5 +1,5 @@
 <div class="twitter widget">
-  <h4>Health &amp; care tweets</h4>
+  <h3>Health &amp; care tweets</h3>
 
   <a data-chrome="noheader" class="twitter-timeline" href="https://twitter.com/DHintranet/lists/dhintranet-follows-2" data-widget-id="493744362610634752">Tweets from https://twitter.com/DHintranet/lists/dhintranet-follows-2</a>
 

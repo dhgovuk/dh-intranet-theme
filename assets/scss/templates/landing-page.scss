@@ -3,8 +3,6 @@
     margin: $margin 0 0 0;
 
     .child-pages {
-        @include pad(default);
-        background: $light-grey;
         margin-bottom: $margin;
 
         @media screen and (max-width: $medium-screen) {

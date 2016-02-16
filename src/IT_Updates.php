@@ -135,7 +135,6 @@ class IT_Updates
         $output .= '</tbody>';
         $output .= '</table>';
 
-
         // Convert new lines into <br>.
         $status_data['overall_status']['message'] = nl2br($status_data['overall_status']['message']);
 
@@ -158,11 +157,10 @@ class IT_Updates
 
         $decoded_status = stripslashes_deep(json_decode($overall_status[0]->data_value, true));
 
-        if( ! is_null($decoded_status))
-        {
-            echo '<li class="it-updates status-'.esc_attr($decoded_status['status']).'">';
-            echo "<a href=\"/it-updates\">Workplace status <span>".esc_attr($decoded_status['status'])."</span></a>";
-            echo '</li>';
+        if (!is_null($decoded_status)) {
+            echo '<div class="it-updates-widget status-'.esc_attr($decoded_status['status']).'">';
+            echo '<a href="/it-updates">Workplace status <span>'.esc_attr($decoded_status['status']).'</span></a>';
+            echo '</div>';
         }
     }
 }

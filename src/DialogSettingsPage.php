@@ -109,7 +109,7 @@ class DialogSettingsPage
      */
     public function print_section_info()
     {
-        print 'Enable or disable dialogs:';
+        echo 'Enable or disable dialogs:';
     }
 
     /**

@@ -12,7 +12,7 @@
     }
 }
 
-.news-section-sidebar {
+.page .news-section-sidebar, .news-section-sidebar {
     @include span-columns(4);
     @include omega;
     @media screen and (max-width: $medium-screen) {
@@ -35,7 +35,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: $brand-primary;
+            background: $brand-secondary;
             color: $white;
             padding: 5px 15px;
 
@@ -55,7 +55,7 @@
             left: 10px;
             bottom: -10px;
             content: "";
-            border-top: 10px solid $brand-primary;
+            border-top: 10px solid $brand-secondary;
             border-right: 10px solid transparent;
         }
     }

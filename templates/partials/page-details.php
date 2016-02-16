@@ -104,7 +104,7 @@
             //ugly inline css to put written by and $user_email on same line.
 
             ?>
-            <a href="mailto:<?php echo esc_attr(trim(strip_tags($user_email))) ?>" style="display:inline-block; border:0;"><?php echo esc_html(trim(strip_tags($written_by))) ?></a>
+            <a href="mailto:<?php echo esc_attr(trim(strip_tags($user_email))) ?>"><?php echo esc_html(trim(strip_tags($written_by))) ?></a>
             <?php
           } else {
             echo esc_html($written_by);

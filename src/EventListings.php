@@ -82,8 +82,14 @@ class EventListings
         $p = get_post($id);
 
         // Convert from timezone stored in post to timezone stored in options
-        $eventTz = new \DateTimeZone(get_post_meta($id, 'timezone', true));
         $siteTz = new \DateTimeZone(get_option('timezone_string'));
+        try {
+            $eventTz = new \DateTimeZone(get_post_meta($id, 'timezone', true));
+        } catch (\Exception $e) {
+            // Fallback to the same TZ as the site
+            $eventTz = $siteTz;
+        }
+
         $start = new \DateTime(get_post_meta($id, 'start_date', true), $eventTz);
         $end = new \DateTime(get_post_meta($id, 'end_date', true), $eventTz);
         $start->setTimezone($siteTz);

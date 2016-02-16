@@ -52,7 +52,7 @@ class SearchTest extends PHPUnit_Framework_TestCase
         $this->q
         ->expects($this->exactly(1))
         ->method('set')
-        ->with('post_type', ['post', 'page', 'event']);
+        ->with('post_type', ['page', 'event', 'todo-item', 'local-news', 'post']);
 
         $this->s->parseQuery($this->q);
     }
@@ -99,7 +99,7 @@ class SearchTest extends PHPUnit_Framework_TestCase
         $this->q
         ->expects($this->exactly(1))
         ->method('set')
-        ->with('post_type', ['page', 'event']);
+        ->with('post_type', ['page', 'event', 'todo-item', 'local-news']);
 
         $this->s->parseQuery($this->q);
     }
