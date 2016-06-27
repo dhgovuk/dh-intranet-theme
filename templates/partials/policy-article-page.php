@@ -55,5 +55,6 @@
 </article>
 
 <aside class="sidebar group" role="complementary">
-  <?php get_template_part('partials/page-details') ?>
+    <?php get_template_part('partials/service-links') ?>
+    <?php get_template_part('partials/page-details') ?>
 </aside>

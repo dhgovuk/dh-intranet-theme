@@ -12,11 +12,12 @@
         }
 
         h2, h3 {
-            font-size: $base-font-size*1.74;
+            font-size: $base-font-size*1.5;
         }
     }
 
     .campaign-tabs {
+        margin: 0 0 $margin;
 
         ul {
 
@@ -29,7 +30,7 @@
                     display: inline-block;
                     background: scale-color($brand-secondary, $lightness: 50%);
                     margin: 0 $margin/2 0 0;
-                    padding: $padding/2 $padding;
+                    padding: 10px $padding/2;
                     color: $white;
                 }
                 a.selected {
@@ -47,14 +48,31 @@
 
             .image {
                 @include span-columns(4);
+                overflow: hidden;
+                position: relative;
+
                 @media screen and (max-width: $medium-screen) {
                     @include span-columns(12)
+                }
+
+                span {
+                    position: absolute;
+                    left: -50px;
+                    top: -50px;
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    line-height: 165px;
+                    text-align: center;
+                    background: $dh-red;
+                    color: $white;
+                    transform: rotate(-45deg);
+                    text-transform: uppercase;
                 }
 
                 img {
                     width: 100%;
                     height: auto;
-                    padding-top: 6px;
                 }
             }
 
@@ -109,7 +127,7 @@
         margin: 0 0 $margin 0;
 
         h3 {
-            font-size: $base-font-size*1.076;
+            font-size: $base-font-size;
         }
 
         &.last-child {
@@ -121,6 +139,11 @@
 
             @media screen and (min-width: $big-screen) {
                 @include span-columns(4 of 12);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
             }
         }
 
@@ -225,7 +248,7 @@
 // Popular pages
 
 .popular-pages {
-    background: $light-grey;
+    background: $dh-coolgrey;
     padding: ($padding/2);
     margin: 0 0 $margin;
 
@@ -235,7 +258,7 @@
         column-count: 2;
 
         a {
-            color: $base-font-colour;
+            color: $white;
 
             &:hover {
                 text-decoration: underline;

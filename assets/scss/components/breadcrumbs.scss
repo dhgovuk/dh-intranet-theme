@@ -1,19 +1,30 @@
 .breadcrumbs {
-    padding: 0 0 $padding/4 0;
-    margin: 0 0 $margin/4 0;
-    font-weight: bold;
+  font-weight: bold;
 
-    li {
-      display: inline;
+  li {
+    display: inline;
 
-      &:after {
-        content: "\203A";
-        margin: 0 5px;
-        font-weight: bold;
-      }
+    &:after {
+      content: "";
+      margin: 0 5px;
+      background: url("#{$imagePath}/icon-navigate-right.svg") no-repeat 0 0;
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+    }
 
-      &:last-child:after {
-        display: none;
-      }
+    &:last-child:after {
+      display: none;
     }
   }
+
+  a {
+    color: $dark-grey;
+    font-weight: normal;
+
+    &:hover {
+      color: $base-font-colour;
+    }
+  }
+}
+

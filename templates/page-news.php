@@ -7,12 +7,10 @@ query_posts([
     'paged' => $paged,
 ]);
 ?>
-
-<header>
-    <h1><?php _e('News Archive', 'roots'); ?></h1>
-</header>
-
 <section class="news-section">
+    <header>
+        <h1><?php _e('News Archive', 'roots'); ?></h1>
+    </header>
     <?php while (have_posts()) : ?>
         <?php the_post() ?>
         <article class="news-story entry group">
@@ -36,10 +34,9 @@ query_posts([
 
         </article>
     <?php endwhile; ?>
+    <?php get_template_part('partials/pagination'); ?>
 </section>
 
-<aside class="_sidebar news-section-sidebar">
+<aside class="sidebar news-section-sidebar">
     <?php get_template_part('partials/sidebar'); ?>
 </aside>
-
-<?php get_template_part('partials/pagination'); ?>

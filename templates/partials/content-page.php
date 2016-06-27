@@ -25,16 +25,20 @@
         </div>
     <?php endif ?>
 
-    <?php comments_template('/partials/comments.php'); ?>
-
     <?php
-    if (class_exists('\\ContentFeedback\\ContentFeedback')) {
-        \ContentFeedback\ContentFeedback::form(get_the_id());
+    if (class_exists('\\Dxw\\ContentFeedback\\Registrar')) {
+        $registrar = \Dxw\ContentFeedback\Registrar::getInstance();
+        $registrar->di['Dxw\\ContentFeedback\\Feedback']->form(get_the_id());
     }
     ?>
+
+    <?php comments_template('/partials/comments.php'); ?>
+
+
 
 </article>
 
 <aside class="sidebar group" role="complementary">
+    <?php get_template_part('partials/service-links') ?>
     <?php get_template_part('partials/page-details') ?>
 </aside>

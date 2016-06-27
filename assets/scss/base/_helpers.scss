@@ -32,7 +32,12 @@
     color: $colour;
 }
 
+// Rem/PX
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
 
-@media screen and (max-width: $medium-screen) {}
-@media screen and (max-width: $small-screen) {}
-@media screen and (max-width: $tiny-screen) {}
+// @media screen and (max-width: $medium-screen) {}
+// @media screen and (max-width: $small-screen) {}
+// b@media screen and (max-width: $tiny-screen) {}

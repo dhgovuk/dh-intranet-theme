@@ -38,7 +38,7 @@
             ?>
 
             <?php if (count($grandchildren) > 0) : ?>
-                <h3><?php echo $child->post_title; ?></h3>
+                <h3 id="heading-<?php echo esc_attr($child->post_name) ?>"><?php echo $child->post_title; ?></h3>
             <?php else : ?>
                 <h3><a href="<?php echo esc_attr(get_permalink($child_link)); ?>"><?php echo $child->post_title; ?> </a></h3>
             <?php endif ?>

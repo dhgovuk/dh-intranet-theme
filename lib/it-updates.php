@@ -3,7 +3,7 @@
 add_action('admin_menu', 'it_updates_menu');
 function it_updates_menu()
 {
-    wp_enqueue_script('script-name', get_stylesheet_directory_uri().'/../assets/js/it-updates.js', array(), uniqid(), true);
+    wp_enqueue_script('script-name', \h()->getAssetPath('it-updates.min.js'), array(), uniqid(), true);
     add_menu_page('IT Updates', 'IT Updates', 'manage_options', 'it-updates', 'show_it_updates_backend', 'dashicons-dashboard');
 }
 

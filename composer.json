@@ -4,7 +4,9 @@
         "dxw/php-missing": "dev-master",
         "dxw/cidr": "dev-master",
         "dxw/wp-missing": "dev-master",
-        "aura/autoload": "~2.0"
+        "dxw/iguana": "^1.0",
+        "dxw/iguana-theme": "^1.0",
+        "dxw/iguana-extras": "^1.0"
     },
     "require-dev": {
         "10up/wp_mock": "dev-master",
@@ -14,7 +16,10 @@
     },
     "autoload": {
       "psr-4": {
-        "DHIntranet\\": "src/"
+        "DHIntranet\\": "app/"
       }
+    },
+    "scripts": {
+        "post-update-cmd": "vendor/bin/phar-install"
     }
 }

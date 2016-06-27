@@ -16,7 +16,7 @@
     <div class="emergency-message"><?php the_field('emergency_message', 'option'); ?></div>
   <?php endif; ?>
 
-  <?php include roots_template_path(); ?>
+  <?php include roots_template_path() ?>
 
 </main>
 

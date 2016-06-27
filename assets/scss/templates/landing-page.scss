@@ -26,10 +26,10 @@
                 display: block;
                 padding: 10px 0;
                 @include transition(all 0.2s ease-in-out);
-                color: $brand-primary;
+                color: $link-colour;
 
                 &:hover {
-                    color: $brand-secondary;
+                    color: $link-hover-colour;
                 }
             }
         }

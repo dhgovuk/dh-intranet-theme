@@ -1,12 +1,23 @@
 .single {
 
-    article {
-        @include span-columns(8);
-        margin-bottom: ($margin)*2;
-
-        @media screen and (max-width: $medium-screen) {
+    .single-article {
+       @include span-columns(8);
+       @media screen and (max-width: $medium-screen) {
             @include span-columns(12);
         }
+    }
+
+    .featured-img {
+        padding: 0;
+
+        img {
+            max-width: 100%;
+            clear: both;
+        }
+    }
+
+    article {
+        margin-bottom: ($margin)*2;
     }
 
     figure {

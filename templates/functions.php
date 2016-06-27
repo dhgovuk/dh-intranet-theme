@@ -1,11 +1,7 @@
 <?php
 
-require __DIR__.'/../vendor.phar';
-
-// Autoload
-$loader = new \Aura\Autoload\Loader;
-$loader->register();
-$loader->addPrefix('DHIntranet', __DIR__.'/../src');
+$registrar = require __DIR__.'/../app/load.php';
+$registrar->register();
 
 // Roots
 roots_require('lib/utils.php');
@@ -20,25 +16,21 @@ roots_require('lib/comments.php');
 roots_require('lib/widgets.php');
 
 // Non-roots
-include __DIR__.'/../lib/feeds.php';
-include __DIR__.'/../lib/assets.php';
-include __DIR__.'/../lib/post-types.php';
-include __DIR__.'/../lib/menus.php';
-include __DIR__.'/../lib/widgets.php';
-include __DIR__.'/../lib/pages.php';
-include __DIR__.'/../lib/acf.php';
-include __DIR__.'/../lib/locations.php';
-include __DIR__.'/../lib/ajax-logged-in-check.php';
-include __DIR__.'/../lib/wp-admin.php';
-include __DIR__.'/../lib/remove-meta-boxes.php';
-include __DIR__.'/../lib/visual-form-builder-custom.php';
-include __DIR__.'/../lib/taxonomies.php';
-include __DIR__.'/../lib/etc.php';
-include __DIR__.'/../lib/comment.php';
-include __DIR__.'/../lib/tasks.php';
-include __DIR__.'/../lib/event-listings.php';
-include __DIR__.'/../lib/helpers.php';
-include __DIR__.'/../lib/it-updates.php';
-include __DIR__.'/../lib/options-settings.php';
-
-\DHIntranet\LoginCookieDuration::register();
+require __DIR__.'/../lib/core.php';
+require __DIR__.'/../lib/post-types.php';
+require __DIR__.'/../lib/menus.php';
+require __DIR__.'/../lib/widgets.php';
+require __DIR__.'/../lib/acf.php';
+require __DIR__.'/../lib/locations.php';
+require __DIR__.'/../lib/ajax-logged-in-check.php';
+require __DIR__.'/../lib/wp-admin.php';
+require __DIR__.'/../lib/remove-meta-boxes.php';
+require __DIR__.'/../lib/visual-form-builder-custom.php';
+require __DIR__.'/../lib/taxonomies.php';
+require __DIR__.'/../lib/etc.php';
+require __DIR__.'/../lib/comment.php';
+require __DIR__.'/../lib/tasks.php';
+require __DIR__.'/../lib/event-listings.php';
+require __DIR__.'/../lib/helpers.php';
+require __DIR__.'/../lib/it-updates.php';
+require __DIR__.'/../lib/options-settings.php';

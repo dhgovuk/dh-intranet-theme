@@ -1,14 +1,36 @@
 .search-results-list {
 
-  .count {
-    @include span-columns(2);
-    font-weight: bold;
-    margin: 0 0 $margin;
-    padding: $padding/2 0;
+  .did-you-mean {
+    margin: 0;
+    position: relative;
+    top: -30px;
   }
 
   .search-filters {
-    @include span-columns(10);
+    @include span-columns(4);
+    @media screen and (max-width: $medium-screen) {
+        @include span-columns(12);
+    }
   }
 
+  .returned-results {
+    @include span-columns(7);
+    @media screen and (max-width: $medium-screen) {
+        @include span-columns(12);
+    }
+
+    article {
+      margin: 0 0 $margin;
+    }
+
+    h2 {
+      font-size: $base-font-size*1.5;
+      margin: 0;
+    }
+  }
+
+  .filter-by, .count {
+    font-weight: bold;
+    padding: $padding/2 0;
+  }
 }

@@ -25,34 +25,32 @@ class PagesTest extends PHPUnit_Framework_TestCase
     public function testGetTheBreadcrumbs1()
     {
         \WP_Mock::wpFunction('get_bloginfo', [
-            'args' => ['url'],
-            'return' => 'y',
+         'args' => ['url'],
+         'return' => 'y',
         ]);
 
         \WP_Mock::wpFunction('get_post_ancestors', [
-            'args' => [7],
-            'return' => [
-            ],
+         'args' => [7],
+         'return' => [
+         ],
         ]);
 
         \WP_Mock::wpFunction('get_the_ID', [
-            'args' => [],
-            'return' => 7,
+         'args' => [],
+         'return' => 7,
         ]);
 
         $output = \DHIntranet\Pages::get_the_breadcrumbs();
 
-        $this->assertHTMLEquals('
-        <li><a href="y">Home</a></li>
-        ', $output, true);
+        $this->assertHTMLEquals('', $output, true);
     }
 
     public function testGetTheBreadcrumbs2()
     {
         \WP_Mock::wpFunction('get_bloginfo', [
-            'args' => ['url'],
-            'return' => 'z',
-        ]);
+             'args' => ['url'],
+             'return' => 'z',
+         ]);
 
         \WP_Mock::wpFunction('get_post_ancestors', [
             'args' => [7],
@@ -90,7 +88,6 @@ class PagesTest extends PHPUnit_Framework_TestCase
         $output = \DHIntranet\Pages::get_the_breadcrumbs();
 
         $this->assertHTMLEquals('
-        <li><a href="z">Home</a></li>
         <li><a href="link2">Title2</a></li>
         <li><a href="link1">Title1</a></li>
         ', $output, true);

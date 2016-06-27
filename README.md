@@ -13,7 +13,7 @@ Grunt:
 
     # install stuff
     npm install && bower install
-    # build the contents of the build/ directory upon changes in assets/
+    # build the contents of the templates/assets/ directory upon changes in assets/
     grunt watch
 
 ## Design

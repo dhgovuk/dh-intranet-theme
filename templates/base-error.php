@@ -23,15 +23,15 @@ if (!isset($body)) {
         <style>
 
             html {
-                font-size: 15px;
-                line-height: 1.618;
+                font-size: 16px;
+                line-height: 1.6;
                 font-family: -apple-system, '.SFNSText-Regular', 'San Francisco', Roboto, 'Segoe UI', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-                color: #222;
+                color: #313133;
                 background: #fff;
             }
 
             h1 {
-                font-size: 39.27px;
+                font-size: 40px;
             }
 
             .container {
@@ -65,7 +65,7 @@ if (!isset($body)) {
 
         <div class="container">
             <div class="row logo">
-                <img src="/wp-content/themes/dh-intranet/assets/img/department-of-health-logo.png">
+                <img src="<?php h()->assetPath('img/department-of-health-logo.png') ?>">
             </div>
 
             <div class="row">

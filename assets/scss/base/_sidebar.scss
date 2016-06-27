@@ -1,9 +1,9 @@
-$sidebar-heading-text: $white;
-$sidebar-link: $nearly-black;
-$sidebar-link-hover: $nearly-black;
-$sidebar-link-background-hover: $brand-secondary;
+$sidebar-heading-text: $base-font-colour;
+$sidebar-link: $dh-blue;
+$sidebar-link-hover: $dh-green;
+$sidebar-link-background-hover: transparent;
 
-.page .sidebar {
+.sidebar {
     @include span-columns(4);
 
      @media screen and (max-width: $medium-screen) {
@@ -11,70 +11,79 @@ $sidebar-link-background-hover: $brand-secondary;
     }
 
     .widget {
+        margin: 0 0 $margin;
 
-        h5 {
-            background: $brand-secondary;
-            width: 100%;
-            padding: 10px 15px;
-            margin: 0;
+        .root-page {
+            display: none;
+        }
+
+        h5, h6 {
             color: $sidebar-heading-text;
-            font-size: $base-font-size*1.076;
-            border-bottom: 1px solid $white;
+            font-size: $base-font-size*1.5;
 
             a {
                 color: $sidebar-heading-text;
             }
         }
 
-        h6 {
-            background: $dark-grey;
-            width: 100%;
-            padding: 10px 15px;
-            margin: 0;
-            color: $sidebar-heading-text;
-            font-size: $base-font-size*1.076;
-            border-bottom: 1px solid $white;
-        }
 
         li {
             border-bottom: 1px solid $light-medium-grey;
             a {
                 display: block;
-                padding: 10px 15px;
+                padding: 5px 10px;
+                color: $sidebar-link;
                 @include transition(all 0.2s ease-in-out);
-                color: $dark-grey;
 
                 &:hover {
-                    color: $black;
-                    background: $brand-tertiary;
+                    color: $sidebar-link-hover;
+                    background: $sidebar-link-background-hover;
                 }
             }
         }
 
-        .author-email {
-            padding: 10px 15px;
+        .highlight-current > a {
             font-weight: bold;
-
-            a {
-                padding: 0;
-                font-weight: normal;
-            }
-        }
-
-        .highlight-current a {
-            background: $brand-tertiary;
             color: $black;
 
             &:hover {
                 color: $black;
             }
         }
+
+        .children {
+            margin: 0 0 0 10px;
+
+            li {
+               border-bottom: none;
+            }
+        }
     }
 
-}
+    .page-details-widget {
+        h5 {
+            color: $sidebar-heading-text;
+            font-size: $base-font-size*1.5;
+        }
 
-.single .sidebar {
-    margin-top: ($margin)*2;
+        .author-email, .author-team {
+            padding: 5px 10px;
+            font-weight: bold;
+            border-bottom: 1px solid $light-medium-grey;
+
+            a {
+                color: $sidebar-link;
+                padding: 0;
+                font-weight: normal;
+
+                &:hover {
+                    color: $sidebar-link-hover;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
 }
 
 .single .sidebar {
@@ -85,35 +94,24 @@ $sidebar-link-background-hover: $brand-secondary;
         @include span-columns(12);
     }
 
-    .widget {
-        margin: 0 0 $margin;
-    }
+    .widget-inner {
 
-    h3 {
-        font-size: $base-font-size*1.076;
-    }
+        .page-review {
+            padding: 15px;
+        }
 
-    h3, h4 {
-        background: $dark-grey;
-        color: $white;
-        padding: ($padding)/2;
-        margin: 0;
-    }
+        li {
+            border-bottom: 1px solid $light-medium-grey;
+            a {
+                display: block;
+                padding: 5px 10px;
+                color: $sidebar-link;
+                @include transition(all 0.2s ease-in-out);
 
-    .page-review {
-        padding: 15px;
-    }
-
-    li {
-        border-bottom: 1px solid $light-medium-grey;
-        a {
-            display: block;
-            padding: 10px 15px;
-            color: $sidebar-link;
-            @include transition(all 0.2s ease-in-out);
-
-            &:hover {
-                background: $sidebar-link-background-hover;
+                &:hover {
+                    color: $sidebar-link-hover;
+                    background: $sidebar-link-background-hover;
+                }
             }
         }
     }

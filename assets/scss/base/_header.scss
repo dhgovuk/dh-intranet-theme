@@ -49,6 +49,7 @@ $header-links: $white;
         input[type=search] {
             width: 80%;
             border: 2px solid $white;
+            height: 35px;
 
             &:focus {
                 // box-shadow: 0 0 0 2px $dh-dark-green;
@@ -68,6 +69,8 @@ $header-links: $white;
             img {
                 width: 18px;
                 height: auto;
+                position: relative;
+                top: 2px;
             }
 
             span {

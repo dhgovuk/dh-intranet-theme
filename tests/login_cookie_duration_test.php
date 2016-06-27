@@ -18,14 +18,18 @@ class LoginCookieDurationTest extends PHPUnit_Framework_TestCase
 
     public function testRegister()
     {
-        \WP_Mock::expectFilterAdded('auth_cookie_expiration', ['\\DHIntranet\\LoginCookieDuration', 'authCookieExpiration'], 50);
+        $loginCookieDuration = new \DHIntranet\LoginCookieDuration();
 
-        \DHIntranet\LoginCookieDuration::register();
+        \WP_Mock::expectFilterAdded('auth_cookie_expiration', [$loginCookieDuration, 'authCookieExpiration'], 50);
+
+        $loginCookieDuration->register();
     }
 
     public function testAuthCookieExpiration()
     {
-        $output = \DHIntranet\LoginCookieDuration::authCookieExpiration(1);
+        $loginCookieDuration = new \DHIntranet\LoginCookieDuration();
+
+        $output = $loginCookieDuration->authCookieExpiration(1);
         $this->assertEquals(365 * 24 * 60 * 60, $output);
     }
 }

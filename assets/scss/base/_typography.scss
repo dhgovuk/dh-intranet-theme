@@ -7,60 +7,54 @@ $font-family-sans: $system-font-family-sans, "Helvetica Neue", Arial, Sans-Serif
 $font-family-serif: "Georgia", Times, Serif;
 
 $base-sans: $font-family-sans;
-$base-font-size: 15px;
-$base-line-height: 1.618; // phi
+$base-font-size: 16px;
+$base-line-height: 1.6; // phi
 
-$heading-line-height: 1.2;
+$heading-line-height: 1.4;
 $heading-colour: $base-font-colour;
 $heading-link: $brand-secondary;
-$heading-link-hover: $brand-secondary;
-
-// Rem/PX
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
+$heading-link-hover: $brand-primary;
 
 // Headings
 
 h1 {
-  font-size: $base-font-size*2.618;
+  font-size: $base-font-size*2.5;
   font-weight: bold;
-  margin: 0.5em 0 0.75em 0;
-  line-height: $heading-line-height;
+  line-height: 1.2;
+  margin: 0 0 1em 0;
 }
 
 h2 {
-  font-size: $base-font-size*1.74;
+  font-size: $base-font-size*2;
   font-weight: bold;
-  margin: 0.5em 0 0.75em 0;
   line-height: $heading-line-height;
+  margin: 0 0 1em 0;
 }
 
 h3 {
-  font-size: $base-font-size*1.618;
+  font-size: $base-font-size*1.5;
   font-weight: bold;
-  margin: 0.5em 0 0.75em 0;
   line-height: $heading-line-height;
+  margin: 0 0 1em 0;
 }
 
 h4 {
-  font-size: $base-font-size*1.076;
+  font-size: $base-font-size;
   font-weight: bold;
-  margin: 0.5em 0 0.75em 0;
   line-height: $heading-line-height;
+  margin: 0 0 1em 0;
 }
 
 h5 {
   font-size: $base-font-size;
   font-weight: bold;
-  margin: 0.5em 0 0.75em 0;
+  margin: 0 0 1em 0;
 }
 
 h6 {
   font-size: $base-font-size;
   font-weight: bold;
-  margin: 0.5em 0 0.75em 0;
+  margin: 0 0 1em 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -127,22 +121,14 @@ h1, h2, h3, h4, h5, h6 {
     // Horizontal Rule
 
     hr {
-      border: 0;
+      border: none;
+      border-top: 1px solid scale-color($base-font-colour, $lightness: 50%);
       margin: 1em 0;
-      line-height: 1;
-      text-align: center;
-      font-size: $base-font-size*2;
-      color: scale-color($base-font-colour, $lightness: 50%)
-    }
-
-    hr:after {
-      content: "···";
-      letter-spacing: 1em;
       height: 0;
+      line-height: 0;
     }
 
     // Article Links
-
     a {
       color: $link-colour;
       text-decoration: none;
@@ -151,6 +137,14 @@ h1, h2, h3, h4, h5, h6 {
     a:hover {
       color: $link-hover-colour;
       text-decoration: underline;
+    }
+
+    strong, b {
+      font-weight: bold;
+    }
+
+    em, i {
+      font-style: italic;
     }
 
     // Tables
@@ -180,10 +174,6 @@ h1, h2, h3, h4, h5, h6 {
         padding: 5px 10px;
       }
 
-      tr:nth-of-type(odd) {
-        background: $nearly-white;
-      }
-
       tfoot {}
     }
 
@@ -192,23 +182,34 @@ h1, h2, h3, h4, h5, h6 {
 // Post Images
 
 .wp-post-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .alignright {
   float: right;
+  margin: 1em 0 1em 1em;
 }
 
 .alignleft {
   float: left;
+  margin: 1em 1em 1em 0;
 }
 
-.wp-post-image.alignright {
-  margin-right: 0;
+.aligncenter {
+  display: block;
+  margin: 1em auto;
 }
 
-.wp-post-image.alignleft {
-  margin-left: 0;
+.alignnone {
+  display: block;
+  margin: 1em;
+}
+
+.inline-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 2px;
 }

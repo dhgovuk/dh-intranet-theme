@@ -15,6 +15,6 @@ function getMonthName($month)
 }
 
 function new_excerpt_length($length) {
-  return 20;
+  return 27;
 }
 add_filter('excerpt_length', 'new_excerpt_length');

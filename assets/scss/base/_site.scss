@@ -39,14 +39,16 @@ a {
 }
 
 * {
-    box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .emergency-message {
     background: $highlight;
     padding: ($padding/2);
     color: $white;
-    font-size: $base-font-size*1.076;
+    font-size: $base-font-size;
     font-weight: bold;
     margin-bottom: $margin;
 }

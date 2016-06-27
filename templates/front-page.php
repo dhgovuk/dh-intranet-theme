@@ -1,6 +1,6 @@
 <div class="front-page-main group">
 
-    <?php get_template_part('partials/need-to-know') ?>
+    <?php get_template_part('partials/campaign-tabs') ?>
 
     <div class="news-stories">
 
@@ -139,5 +139,6 @@
     <?php get_template_part('partials/popular-pages') ?>
     <?php //get_template_part('partials/todo-list') ?>
     <?php //get_template_part('partials/your-building') ?>
-    <?php get_template_part('partials/twitter') ?>
+    <?php //get_template_part('partials/twitter') ?>
+    <?php get_template_part('partials/events/events-sidebar') ?>
 </aside>

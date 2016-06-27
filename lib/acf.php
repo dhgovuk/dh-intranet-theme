@@ -1,13 +1,9 @@
 <?php
 
 // This bit of code seems to be necessary when adding other options sub-pages
-if (function_exists('acf_add_options_sub_page')) {
-    acf_add_options_sub_page([
-        'title' => 'Options',
-        'menu' => 'Options',
-        'slug' => 'acf-options',
-        'capability' => 'manage_options'
-    ]);
+if( function_exists('acf_add_options_sub_page') ) {
+    acf_add_options_sub_page( 'Homepage' );
+    acf_add_options_sub_page( 'Error page' );
 }
 
 if (function_exists('register_field_group')) {
@@ -334,7 +330,7 @@ if (function_exists('register_field_group')) {
                 array(
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'acf-options',
+                    'value' => 'acf-options-homepage',
                     'order_no' => 0,
                     'group_no' => 0,
                 ),
@@ -887,7 +883,7 @@ if (function_exists('register_field_group')) {
                 array (
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'acf-options',
+                    'value' => 'acf-options-error-page',
                     'order_no' => 0,
                     'group_no' => 0,
                 ),
@@ -968,11 +964,46 @@ if (function_exists('register_field_group')) {
                 'formatting' => 'none',
                 'maxlength' => '',
               ),
+            array (
+                'key' => 'field_5714adf2d48e5',
+                'label' => 'Show "New" banner',
+                'name' => 'show_new_banner',
+                'type' => 'radio',
+                'instructions' => '',
+                'choices' => array (
+                  'no' => 'No',
+                  'yes' => 'Yes',
+                ),
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => '',
+                'layout' => 'vertical',
+              ),
+            array (
+                'key' => 'field_5714f4643f1ed',
+                'label' => 'Expiry date of the "New" banner',
+                'name' => 'expiry_date',
+                'type' => 'date_picker',
+                'conditional_logic' => array (
+                    'status' => 1,
+                    'rules' => array (
+                        array (
+                            'field' => 'field_5714adf2d48e5',
+                            'operator' => '==',
+                            'value' => 'yes',
+                        ),
+                    ),
+                    'allorany' => 'all',
+                ),
+                'date_format' => 'yymmdd',
+                'display_format' => 'dd/mm/yy',
+                'first_day' => 1,
+              ),
             ),
             'row_min' => 1,
             'row_limit' => 3,
             'layout' => 'row',
-            'button_label' => 'Add Row',
+            'button_label' => 'Add Tab',
           ),
           array (
             'key' => 'field_56b9cf25a4841',
@@ -1007,6 +1038,20 @@ if (function_exists('register_field_group')) {
                 'maxlength' => '',
               ),
               array (
+                'key' => 'field_56d45a63c88b0',
+                'label' => 'Opens in new Window',
+                'name' => 'opens_in_new_window',
+                'type' => 'radio',
+                'choices' => array (
+                    'No' => 'No',
+                    'Yes' => 'Yes',
+                ),
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => 'No',
+                'layout' => 'vertical',
+              ),
+              array (
                 'key' => 'field_56b9cf64a4844',
                 'label' => 'Icon',
                 'name' => 'icon',
@@ -1023,7 +1068,7 @@ if (function_exists('register_field_group')) {
             'row_min' => '',
             'row_limit' => '',
             'layout' => 'table',
-            'button_label' => 'Add Row',
+            'button_label' => 'Add Link',
           ),
           array (
             'key' => 'field_56bb09a2fc659',
@@ -1062,7 +1107,7 @@ if (function_exists('register_field_group')) {
             'row_min' => '',
             'row_limit' => '',
             'layout' => 'table',
-            'button_label' => 'Add Row',
+            'button_label' => 'Add Link',
           ),
         ),
         'location' => array (

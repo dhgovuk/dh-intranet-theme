@@ -23,6 +23,11 @@
 .news-story {
     margin: 0 0 $margin;
 
+    h2 {
+        font-size: $base-font-size*1.5;
+        margin: 0;
+    }
+
     figure {
         position: relative;
         @include span-columns(4 of 12);
@@ -78,7 +83,7 @@
             padding: 10px 15px;
             margin: 0;
             color: $white;
-            font-size: $base-font-size*1.076;
+            font-size: $base-font-size;
 
             a {
                 color: $white;
@@ -116,7 +121,7 @@
             padding: 10px 15px;
             margin: 0;
             color: $white;
-            font-size: $base-font-size*1.076;
+            font-size: $base-font-size;
 
             a {
                 color: $white;

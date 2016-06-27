@@ -1,4 +1,9 @@
 // Pagination
+
+.pagination {
+    text-align: right;
+}
+
 .paginate {
     clear: both;
     width: 100%;
@@ -28,7 +33,7 @@
     }
 
     .current {
-        border: 1px solid $medium-grey;
-        color: $medium-grey;
+        border: 1px solid $black;
+        color: $black;
     }
 }

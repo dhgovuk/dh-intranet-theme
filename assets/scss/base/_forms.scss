@@ -67,6 +67,11 @@ textarea:focus {
     outline: none;
 }
 
+.button--small {
+    padding: ($padding)/4 ($padding)/2;
+    margin: 0;
+}
+
 .button:hover {
     background: $button-hover;
     color: $button-text;
@@ -92,6 +97,8 @@ a.button {
 .cta .button {
     margin: 0;
 }
+
+
 
 // Labels
 

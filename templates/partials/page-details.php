@@ -84,7 +84,7 @@
   ?>
 </div>
 
-<div class="widget">
+<div class="page-details-widget">
   <h5>Page details</h5>
 
   <ul>
@@ -101,8 +101,6 @@
           }
 
           if ($user_email) {
-            //ugly inline css to put written by and $user_email on same line.
-
             ?>
             <a href="mailto:<?php echo esc_attr(trim(strip_tags($user_email))) ?>"><?php echo esc_html(trim(strip_tags($written_by))) ?></a>
             <?php

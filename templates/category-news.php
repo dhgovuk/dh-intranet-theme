@@ -1,8 +1,7 @@
-<header>
-    <h1><?php _e('News Archive', 'roots'); ?></h1>
-</header>
-
 <section class="news-section">
+    <header>
+        <h1><?php _e('News Archive', 'roots'); ?></h1>
+    </header>
     <?php while (have_posts()) : ?>
         <?php the_post() ?>
         <article class="news-story entry group">
@@ -26,10 +25,9 @@
 
         </article>
     <?php endwhile; ?>
+    <?php get_template_part('partials/pagination'); ?>
 </section>
 
 <aside class="sidebar news-section-sidebar">
     <?php get_template_part('partials/sidebar'); ?>
 </aside>
-
-<?php get_template_part('partials/pagination'); ?>

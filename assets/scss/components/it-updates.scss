@@ -37,6 +37,18 @@
     background: $dh-red;
   }
 
+  &.status-green a:hover {
+    color: $dh-grass-green;
+  }
+
+  &.status-amber a:hover  {
+    color: $dh-yellow;
+  }
+
+  &.status-red a:hover {
+    color: $dh-red;
+  }
+
 }
 
 // Table on page

@@ -3,13 +3,14 @@
 }
 
 .comments {
-    @include span-columns(9);
+    clear: both;
 
     a {
         color: $brand-primary;
     }
 
     hr {
+        border: 0;
         border-top: 1px solid $light-grey;
         margin: $margin 0;
     }
@@ -24,18 +25,18 @@
         clear: both;
 
         .comment-avatar {
-            width: 68px;
-            border: 2px solid $medium-grey;
+            @include span-columns(2 of 12);
             float: left;
 
             img {
+                border: 2px solid $medium-grey;
+                width: 68px;
                 display: block;
-                width: 100%;
             }
         }
 
         .comment-body {
-            @include span-columns(8 of 9);
+            @include span-columns(7 of 9);
             margin-bottom: $margin;
             padding: 0 0 0 $padding;
 
@@ -45,7 +46,8 @@
         }
 
         .comment-meta {
-            @include span-columns(8 of 9);
+            clear: both;
+            width: 100%;
 
             .comment-author {
                 float: left;

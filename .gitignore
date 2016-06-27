@@ -1,5 +1,8 @@
-/bower_components
 /node_modules
-/npm-debug.log
+/.grunt
+/bower_components
+/.npm-debug.log
 /vendor
-.sass-cache
+/.sass-cache
+/static/**/*.map
+/static/img/**/*.bak

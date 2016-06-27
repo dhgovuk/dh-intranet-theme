@@ -136,7 +136,7 @@ function the_little_excerpt($size=200)
     $little_excerpt = substr(get_the_excerpt(), 0, $size);
     $last_space = strrpos($little_excerpt, ' ');
     $little_excerpt = substr($little_excerpt, 0, $last_space);
-    $little_excerpt .= '&#8230;<br><a href="'.esc_attr(get_the_permalink()).'">Continued</a>';
+    $little_excerpt .= '<a href="'.esc_attr(get_the_permalink()).'">Continued</a>';
     echo $little_excerpt;
 }
 
