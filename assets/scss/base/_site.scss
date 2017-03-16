@@ -10,6 +10,7 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     color: $base-font-colour;
+    background: $body-background;
 }
 
 // Main Section
@@ -17,6 +18,7 @@ body {
     margin: auto;
     max-width: $row;
     @include padding($padding);
+    background: $white;
 }
 
 a {

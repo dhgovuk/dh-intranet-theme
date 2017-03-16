@@ -1,14 +1,19 @@
+<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+    <?php if (function_exists('bcn_display')) {
+    echo '<ul>';
+    bcn_display();
+    echo '</ul>';
+}?>
+</div>
+
 <?php the_post(); ?>
 <article <?php post_class('article group'); ?>>
 
     <header>
         <h1><?php echo roots_title(); ?></h1>
         <?php echo the_post_thumbnail(); ?>
+        <?php get_template_part('partials/entry-meta'); ?>
     </header>
-
-    <div class="breadcrumbs">
-        <?php \DHIntranet\Pages::the_breadcrumbs(); ?>
-    </div>
 
     <div class="rich-text entry">
         <?php the_content(); ?>

@@ -4,7 +4,7 @@
         "dxw/php-missing": "dev-master",
         "dxw/cidr": "dev-master",
         "dxw/wp-missing": "dev-master",
-        "dxw/iguana": "^1.0",
+        "dxw/iguana": "^1.1",
         "dxw/iguana-theme": "^1.0",
         "dxw/iguana-extras": "^1.0"
     },
@@ -12,7 +12,8 @@
         "10up/wp_mock": "dev-master",
         "phpunit/phpunit": "4.8.*",
         "dxw/phar-install": "dev-master",
-        "dxw/assertions": "dev-master"
+        "dxw/assertions": "dev-master",
+        "friendsofphp/php-cs-fixer": "1.11.4"
     },
     "autoload": {
       "psr-4": {

@@ -2,7 +2,7 @@
 
     <?php if( have_rows('campaign_tabs', 'option') ): ?>
 
-        <ul class="campaign-tabs-navigation">
+        <ul class="campaign-tabs-navigation group">
             <?php
                 $linkcount = 1;
                 while( have_rows('campaign_tabs', 'option') ): the_row();

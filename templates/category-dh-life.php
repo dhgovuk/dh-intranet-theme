@@ -1,8 +1,7 @@
-<header>
-    <h1><?php echo roots_title(); ?></h1>
-</header>
-
 <section class="news-section dh-life-section">
+    <header>
+        <h1><?php echo roots_title(); ?></h1>
+    </header>
     <?php while (have_posts()) : ?>
         <?php the_post() ?>
         <article class="news-story entry group">

@@ -1,14 +1,14 @@
 {
   "devDependencies": {
-    "bower": "~1.3.0",
-    "grunt": "~0.4.1",
+    "bower": "~1.8.0",
+    "grunt": "~1.0.0",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "~0.8.0",
     "grunt-contrib-watch": "~0.6.0",
     "grunt-exorcise": "^2.1.1",
-    "grunt-img": "~0.1.0",
+    "grunt-img": "~0.1.8",
     "grunt-modernizr": "^1.0.2",
     "grunt-standard": "^2.0.0"
   }

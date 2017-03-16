@@ -15,3 +15,7 @@ $registrar->addInstance(\DHIntranet\Theme\Scripts::class, new \DHIntranet\Theme\
 $registrar->addInstance(\DHIntranet\Icons::class, new \DHIntranet\Icons(
     $registrar->getInstance(\Dxw\Iguana\Theme\Helpers::class)
 ));
+
+$registrar->addInstance(\DHIntranet\AuthorPage::class, new \DHIntranet\AuthorPage());
+
+$registrar->addInstance(\DHIntranet\Profile::class, new \DHIntranet\Profile());

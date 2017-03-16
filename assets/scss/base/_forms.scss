@@ -5,6 +5,7 @@ input[type=search],
 input[type=email],
 input[type=phone],
 input[type=password],
+input[type=url],
 textarea {
     -webkit-appearance:none;
     -moz-appearance:none;
@@ -19,6 +20,10 @@ textarea {
     width: 75%;
 }
 
+select {
+  font-size: $base-font-size;
+}
+
 @media screen and (max-width: $small-screen) {
 
     input[type=text],
@@ -26,6 +31,7 @@ textarea {
     input[type=email],
     input[type=phone],
     input[type=password],
+    input[type=url],
     textarea {
         width:100%;
     }
@@ -46,6 +52,7 @@ input[type=search]:focus,
 input[type=email]:focus,
 input[type=phone]:focus,
 input[type=password]:focus,
+input[type=url]:focus,
 textarea:focus {
     border: 2px solid $input-border-focus;
 }
@@ -97,8 +104,6 @@ a.button {
 .cta .button {
     margin: 0;
 }
-
-
 
 // Labels
 

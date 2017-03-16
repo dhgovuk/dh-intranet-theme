@@ -48,6 +48,8 @@ class Scripts implements \Dxw\Iguana\Registerable
         // Because it's awesome
         wp_enqueue_script('modernizr', $this->getAssetPath('lib/modernizr.min.js'));
 
+        wp_enqueue_script('matchmedia', $this->getAssetPath('media.match.min.js'));
+
         // Pretty much everything else should be compiled by Grunt.
         wp_enqueue_script('main',      $this->getAssetPath('main.min.js'), array('jquery', 'modernizr'), '', true);
 

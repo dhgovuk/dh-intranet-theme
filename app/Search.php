@@ -22,9 +22,16 @@ class Search
 
         $types = ['page', 'event', 'todo-item', 'local-news'];
 
+
+
         if (!isset($this->get['exclude-news']) || !$this->get['exclude-news'] === 'yes') {
             $types[] = 'post';
         }
+
+        if (isset($this->get['post_type']) && $this->get['post_type'] === 'policy-kit') {
+            $types = ['policy-kit'];
+        }
+
 
         $query->set('post_type', $types);
     }

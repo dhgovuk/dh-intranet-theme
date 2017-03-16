@@ -1,10 +1,12 @@
 <?php
 
 // This bit of code seems to be necessary when adding other options sub-pages
-if( function_exists('acf_add_options_sub_page') ) {
-    acf_add_options_sub_page( 'Homepage' );
-    acf_add_options_sub_page( 'Error page' );
+if (function_exists('acf_add_options_sub_page') && current_user_can('edit_users')) {
+    acf_add_options_sub_page('Homepage');
+    acf_add_options_sub_page('Error page');
+    acf_add_options_sub_page('Policy Kit');
 }
+
 
 if (function_exists('register_field_group')) {
 
@@ -37,8 +39,7 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
@@ -74,8 +75,7 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
@@ -111,8 +111,7 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
@@ -149,13 +148,12 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
-    // Fields for page and top tasks
+    // Fields for page
     register_field_group(array(
         'id' => 'acf_page',
         'title' => 'Page',
@@ -229,187 +227,12 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
-    register_field_group(array(
-        'id' => 'acf_top-tasks-2',
-        'title' => 'Top tasks',
-        'fields' => array(
-            array(
-                'key' => 'field_52b036eb7226b',
-                'label' => 'Task 1',
-                'name' => 'task_1',
-                'type' => 'post_object',
-                'required' => 1,
-                'post_type' => array(
-                    0 => 'page',
-                ),
-                'taxonomy' => array(
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_52b036fd7226c',
-                'label' => 'Task 2',
-                'name' => 'task_2',
-                'type' => 'post_object',
-                'post_type' => array(
-                    0 => 'page',
-                ),
-                'taxonomy' => array(
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_52b0370c7226d',
-                'label' => 'Task 3',
-                'name' => 'task_3',
-                'type' => 'post_object',
-                'post_type' => array(
-                    0 => 'page',
-                ),
-                'taxonomy' => array(
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_52b037187226e',
-                'label' => 'Task 4',
-                'name' => 'task_4',
-                'type' => 'post_object',
-                'post_type' => array(
-                    0 => 'page',
-                ),
-                'taxonomy' => array(
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_52b037237226f',
-                'label' => 'Task 5',
-                'name' => 'task_5',
-                'type' => 'post_object',
-                'post_type' => array(
-                    0 => 'page',
-                ),
-                'taxonomy' => array(
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-            array(
-                'key' => 'field_52b0375072270',
-                'label' => 'Task 6',
-                'name' => 'task_6',
-                'type' => 'post_object',
-                'post_type' => array(
-                    0 => 'page',
-                ),
-                'taxonomy' => array(
-                    0 => 'all',
-                ),
-                'allow_null' => 0,
-                'multiple' => 0,
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'options_page',
-                    'operator' => '==',
-                    'value' => 'acf-options-homepage',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array(
-            'position' => 'normal',
-            'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
-        ),
-        'menu_order' => 0,
-    ));
-
-    //top tasks and page links
-    register_field_group(array(
-        'id' => 'acf_page',
-        'title' => 'Page',
-        'fields' => array(
-            array(
-                'key' => 'field_52b2d52dd9ffa',
-                'label' => 'Related links',
-                'name' => 'related_links',
-                'type' => 'repeater',
-                'sub_fields' => array(
-                    array(
-                        'key' => 'field_52b2d76189ba4',
-                        'label' => 'Link name',
-                        'name' => 'link_name',
-                        'type' => 'text',
-                        'column_width' => '',
-                        'default_value' => '',
-                        'placeholder' => '',
-                        'prepend' => '',
-                        'append' => '',
-                        'formatting' => 'html',
-                        'maxlength' => '',
-                    ),
-                    array(
-                        'key' => 'field_52b2d77589ba5',
-                        'label' => 'Link',
-                        'name' => 'link',
-                        'type' => 'text',
-                        'column_width' => '',
-                        'default_value' => '',
-                        'placeholder' => '',
-                        'prepend' => '',
-                        'append' => '',
-                        'formatting' => 'html',
-                        'maxlength' => '',
-                    ),
-                ),
-                'row_min' => '',
-                'row_limit' => '',
-                'layout' => 'table',
-                'button_label' => 'Add Row',
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'page',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array(
-            'position' => 'normal',
-            'layout' => 'no_box',
-            'hide_on_screen' => array(
-            ),
-        ),
-        'menu_order' => 0,
-    ));
-
-    //directorate fields
+    // directorate fields
     register_field_group(array(
         'id' => 'acf_directorate-fields',
         'title' => 'Directorate Fields',
@@ -487,13 +310,13 @@ if (function_exists('register_field_group')) {
         'menu_order' => 0,
     ));
 
-    //Page owner details.
+    // Page owner details.
     register_field_group(array(
         'id' => 'acf_page-owner-details',
         'title' => 'Page owner details',
         'fields' => array(
             array(
-                'key' => 'field_5357c80c2eb86',
+                'key' => 'field_5357c90c2eb86',
                 'label' => 'Page Owner',
                 'name' => 'page_owner',
                 'type' => 'text',
@@ -506,7 +329,7 @@ if (function_exists('register_field_group')) {
                 'maxlength' => '',
             ),
             array(
-                'key' => 'field_5357c8592eb87',
+                'key' => 'field_5357c9592eb87',
                 'label' => 'Page Owner Email',
                 'name' => 'page_owner_email',
                 'type' => 'email',
@@ -517,7 +340,7 @@ if (function_exists('register_field_group')) {
                 'append' => '',
             ),
             array(
-                'key' => 'field_5357c9a24c33f',
+                'key' => 'field_5357c5a24c33f',
                 'label' => 'Page Owner Team',
                 'name' => 'page_owner_team',
                 'type' => 'text',
@@ -535,21 +358,21 @@ if (function_exists('register_field_group')) {
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'page',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-                array(
-                    'param' => 'page_template',
-                    'operator' => '!=',
-                    'value' => 'landing-page.php',
                     'order_no' => 1,
                     'group_no' => 0,
                 ),
                 array(
                     'param' => 'page_template',
                     'operator' => '!=',
-                    'value' => 'template-directorate-page.php',
+                    'value' => 'landing-page.php',
                     'order_no' => 2,
+                    'group_no' => 0,
+                ),
+                array(
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'template-directorate-page.php',
+                    'order_no' => 3,
                     'group_no' => 0,
                 ),
             ),
@@ -557,48 +380,47 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
-    //Policy Steps
+    // Policy kit tabs
     register_field_group(array(
-        'id' => 'acf_policy-step-tabs',
-        'title' => 'Policy Step Tabs',
+        'id' => 'acf_policy-kit-tabs',
+        'title' => 'PolicyKit Tabs',
         'fields' => array(
             array(
-                'key' => 'field_536a3398708e4',
-                'label' => 'Details',
+                'key' => 'field_536a3398708f8',
+                'label' => 'Summary',
                 'name' => '',
                 'type' => 'tab',
             ),
             array(
-                'key' => 'field_536a32a948907',
-                'label' => 'Details',
-                'name' => 'policy-details',
+                'key' => 'field_536a32a948951',
+                'label' => 'Summary',
+                'name' => 'policy-summary',
                 'type' => 'wysiwyg',
-                'instructions' => 'Please enter the content to be displayed in the details tab for this step in the Policy Toolkit Dashboard.<br>This is also the text that will be displayed if this Policy step is included on a Policy page.',
-                'required' => 1,
+                'instructions' => '',
+                'required' => '',
                 'default_value' => '',
                 'toolbar' => 'full',
                 'media_upload' => 'yes',
             ),
             array(
-                'key' => 'field_536a33be708e5',
+                'key' => 'field_536a33be705e5',
                 'label' => 'Get support',
                 'name' => '',
                 'type' => 'tab',
             ),
             array(
-                'key' => 'field_536a331ad3f79',
+                'key' => 'field_536a331ad2f79',
                 'label' => 'Get support',
-                'name' => 'policy-get-support-text',
+                'name' => 'policy-get-support',
                 'type' => 'wysiwyg',
-                'instructions' => 'Please enter the details of a relevant support team.',
+                'instructions' => '',
                 'default_value' => '',
-                'toolbar' => 'full',
+                'toolbar' => 'basic',
                 'media_upload' => 'no',
             ),
             array(
@@ -612,9 +434,9 @@ if (function_exists('register_field_group')) {
                 'label' => 'Case study',
                 'name' => 'policy-casestudy',
                 'type' => 'wysiwyg',
-                'instructions' => 'Please enter a case study that relates to this policy step.',
+                'instructions' => '',
                 'default_value' => '',
-                'toolbar' => 'full',
+                'toolbar' => 'basic',
                 'media_upload' => 'yes',
             ),
         ),
@@ -623,7 +445,7 @@ if (function_exists('register_field_group')) {
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'policy-step',
+                    'value' => 'policy-kit',
                     'order_no' => 0,
                     'group_no' => 0,
                 ),
@@ -632,13 +454,73 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
-    //Policy Link
+    // Policy steps owner
+    register_field_group(array(
+        'id' => 'acf_policy-kit-owner',
+        'title' => 'PolicyKit Owner',
+        'fields' => array(
+            array(
+                'key' => 'field_5357c80d2eb87',
+                'label' => 'Page Owner',
+                'name' => 'page_owner',
+                'type' => 'text',
+                'required' => 1,
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5357d8592eb88',
+                'label' => 'Page Owner Email',
+                'name' => 'page_owner_email',
+                'type' => 'email',
+                'required' => 1,
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+            ),
+            array(
+                'key' => 'field_5357d9a24c33e',
+                'label' => 'Page Owner Team',
+                'name' => 'page_owner_team',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'policy-kit',
+                    'order_no' => 0,
+                    'group_no' => 1,
+                ),
+            ),
+        ),
+        'options' => array(
+            'position' => 'normal',
+            'layout' => 'default',
+            'hide_on_screen' => array(),
+        ),
+        'menu_order' => 0,
+    ));
+
+    // Policy Link
     register_field_group(array(
         'id' => 'acf_policy-test-explanation',
         'title' => 'Policy Test Explanation ',
@@ -669,13 +551,12 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
-    //Newsletter options for 'always', 'never' and 'user'
+    // Newsletter options for 'always', 'never' and 'user'
     register_field_group(array(
         'id' => 'acf_newsletter-options',
         'title' => 'Newsletter options',
@@ -710,68 +591,12 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
-    // Include other page/policy steps selector for pages in the policy-page category
-    //get policy-article cat id
-    $catSlug = get_category_by_slug('policy-article');
-    $catSlug = isset($catSlug->term_id) ? $catSlug->term_id : null;
-
-    register_field_group(array(
-        'id' => 'acf_include-other-pages-or-steps-in-this-policy-article-2',
-        'title' => 'Include other Pages or Steps in this Policy Article',
-        'fields' => array(
-            array(
-                'key' => 'field_53dbabfb9aed0',
-                'label' => 'Add sections',
-                'name' => 'policy_article_includes2',
-                'type' => 'relationship',
-                'instructions' => 'Content from other Pages or Policy steps can be included in this Policy Article page.
-                Click on a title in the left hand column to add it to the page.',
-                'return_format' => 'object',
-                'post_type' => array(
-                    0 => 'page',
-                    1 => 'policy-step',
-                ),
-                'taxonomy' => array(
-                    0 => 'all',
-                ),
-                'filters' => array(
-                    0 => 'search',
-                    1 => 'post_type',
-                ),
-                'result_elements' => array(
-                    0 => 'post_type',
-                    1 => 'post_title',
-                ),
-                'max' => '',
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'post_category',
-                    'operator' => '==',
-                    'value' => $catSlug,
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array(
-            'position' => 'normal',
-            'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
-        ),
-        'menu_order' => 0,
-    ));
-
-    //add short title option for right hand navigation
+    // add short title option for right hand navigation
     register_field_group(array(
         'id' => 'acf_short-title',
         'title' => 'Short title',
@@ -813,12 +638,12 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'side',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
+    // Policy Stages Meta
     register_field_group(array(
         'id' => 'acf_policy-stages-meta',
         'title' => 'Policy Stages Meta',
@@ -851,17 +676,17 @@ if (function_exists('register_field_group')) {
         'options' => array(
             'position' => 'normal',
             'layout' => 'default',
-            'hide_on_screen' => array(
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
 
-    register_field_group(array (
+    // Error 404
+    register_field_group(array(
         'id' => 'acf_404-error-page',
         'title' => '404 error page',
-        'fields' => array (
-            array (
+        'fields' => array(
+            array(
                 'key' => 'field_5633b6a23f68b',
                 'label' => 'Content',
                 'name' => '404_page_content',
@@ -878,9 +703,9 @@ if (function_exists('register_field_group')) {
                 'media_upload' => 'yes',
             ),
         ),
-        'location' => array (
-            array (
-                array (
+        'location' => array(
+            array(
+                array(
                     'param' => 'options_page',
                     'operator' => '==',
                     'value' => 'acf-options-error-page',
@@ -889,244 +714,294 @@ if (function_exists('register_field_group')) {
                 ),
             ),
         ),
-        'options' => array (
+        'options' => array(
             'position' => 'normal',
             'layout' => 'no_box',
-            'hide_on_screen' => array (
-            ),
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
     ));
-    register_field_group(array (
+
+
+    // Homepage
+    register_field_group(array(
         'id' => 'acf_homepage',
         'title' => 'Homepage',
-        'fields' => array (
-          array (
-            'key' => 'field_56b9d3acd42a6',
-            'label' => 'Emergency Message',
-            'name' => 'emergency_message',
-            'type' => 'wysiwyg',
-            'instructions' => 'Used to show and emergency on the homepage above the campaign box. Only shows when content is added. ',
-            'default_value' => '',
-            'toolbar' => 'basic',
-            'media_upload' => 'no',
-          ),
-          array (
-            'key' => 'field_56bb08ce35b6a',
-            'label' => 'Campaign Tabs',
-            'name' => 'campaign_tabs',
-            'type' => 'repeater',
-            'sub_fields' => array (
-              array (
-                'key' => 'field_56bb090435b6b',
-                'label' => 'Title',
-                'name' => 'title',
-                'type' => 'text',
-                'column_width' => '',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-              ),
-              array (
-                'key' => 'field_56bb090e35b6c',
-                'label' => 'Image',
-                'name' => 'image',
-                'type' => 'image',
-                'column_width' => '',
-                'save_format' => 'url',
-                'preview_size' => 'large',
-                'library' => 'all',
-              ),
-              array (
-                'key' => 'field_56bb092835b6d',
-                'label' => 'Content',
-                'name' => 'content',
+        'fields' => array(
+            array(
+                'key' => 'field_56b9d3acd42a6',
+                'label' => 'Emergency Message',
+                'name' => 'emergency_message',
                 'type' => 'wysiwyg',
-                'column_width' => '',
+                'instructions' => 'Used to show and emergency on the homepage above the campaign box. Only shows when content is added. ',
                 'default_value' => '',
-                'toolbar' => 'full',
+                'toolbar' => 'basic',
                 'media_upload' => 'no',
-              ),
-              array (
-                'key' => 'field_56bb093935b6e',
-                'label' => 'Call to action',
-                'name' => 'call_to_action',
-                'type' => 'text',
-                'instructions' => 'Please enter the full url E.G. http://gov.uk',
-                'column_width' => '',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-              ),
-            array (
-                'key' => 'field_5714adf2d48e5',
-                'label' => 'Show "New" banner',
-                'name' => 'show_new_banner',
-                'type' => 'radio',
-                'instructions' => '',
-                'choices' => array (
-                  'no' => 'No',
-                  'yes' => 'Yes',
-                ),
-                'other_choice' => 0,
-                'save_other_choice' => 0,
-                'default_value' => '',
-                'layout' => 'vertical',
-              ),
-            array (
-                'key' => 'field_5714f4643f1ed',
-                'label' => 'Expiry date of the "New" banner',
-                'name' => 'expiry_date',
-                'type' => 'date_picker',
-                'conditional_logic' => array (
-                    'status' => 1,
-                    'rules' => array (
-                        array (
-                            'field' => 'field_5714adf2d48e5',
-                            'operator' => '==',
-                            'value' => 'yes',
-                        ),
+            ),
+            array(
+                'key' => 'field_56bb08ce35b6a',
+                'label' => 'Campaign Tabs',
+                'name' => 'campaign_tabs',
+                'type' => 'repeater',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_56bb090435b6b',
+                        'label' => 'Title',
+                        'name' => 'title',
+                        'type' => 'text',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'formatting' => 'none',
+                        'maxlength' => '',
                     ),
-                    'allorany' => 'all',
+                    array(
+                        'key' => 'field_56bb090e35b6c',
+                        'label' => 'Image',
+                        'name' => 'image',
+                        'type' => 'image',
+                        'column_width' => '',
+                        'save_format' => 'url',
+                        'preview_size' => 'large',
+                        'library' => 'all',
+                    ),
+                    array(
+                        'key' => 'field_56bb092835b6d',
+                        'label' => 'Content',
+                        'name' => 'content',
+                        'type' => 'wysiwyg',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'toolbar' => 'full',
+                        'media_upload' => 'no',
+                    ),
+                    array(
+                        'key' => 'field_56bb093935b6e',
+                        'label' => 'Call to action',
+                        'name' => 'call_to_action',
+                        'type' => 'text',
+                        'instructions' => 'Please enter the full url E.G. http://gov.uk',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'formatting' => 'none',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5714adf2d48e5',
+                        'label' => 'Show "New" banner',
+                        'name' => 'show_new_banner',
+                        'type' => 'radio',
+                        'instructions' => '',
+                        'choices' => array(
+                            'no' => 'No',
+                            'yes' => 'Yes',
+                        ),
+                        'other_choice' => 0,
+                        'save_other_choice' => 0,
+                        'default_value' => '',
+                        'layout' => 'vertical',
+                    ),
+                    array(
+                        'key' => 'field_5714f4643f1ed',
+                        'label' => 'Expiry date of the "New" banner',
+                        'name' => 'expiry_date',
+                        'type' => 'date_picker',
+                        'conditional_logic' => array(
+                            'status' => 1,
+                            'rules' => array(
+                                array(
+                                    'field' => 'field_5714adf2d48e5',
+                                    'operator' => '==',
+                                    'value' => 'yes',
+                                ),
+                            ),
+                            'allorany' => 'all',
+                        ),
+                        'date_format' => 'yymmdd',
+                        'display_format' => 'dd/mm/yy',
+                        'first_day' => 1,
+                    ),
                 ),
-                'date_format' => 'yymmdd',
-                'display_format' => 'dd/mm/yy',
-                'first_day' => 1,
-              ),
+                'row_min' => 1,
+                'row_limit' => 3,
+                'layout' => 'row',
+                'button_label' => 'Add Tab',
             ),
-            'row_min' => 1,
-            'row_limit' => 3,
-            'layout' => 'row',
-            'button_label' => 'Add Tab',
-          ),
-          array (
-            'key' => 'field_56b9cf25a4841',
-            'label' => 'Service Links',
-            'name' => 'service_links',
-            'type' => 'repeater',
-            'sub_fields' => array (
-              array (
-                'key' => 'field_56b9cf40a4842',
-                'label' => 'Text',
-                'name' => 'text',
-                'type' => 'text',
-                'column_width' => '',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'html',
-                'maxlength' => '',
-              ),
-              array (
-                'key' => 'field_56b9cf4ea4843',
-                'label' => 'URL',
-                'name' => 'url',
-                'type' => 'text',
-                'column_width' => '',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-              ),
-              array (
-                'key' => 'field_56d45a63c88b0',
-                'label' => 'Opens in new Window',
-                'name' => 'opens_in_new_window',
-                'type' => 'radio',
-                'choices' => array (
-                    'No' => 'No',
-                    'Yes' => 'Yes',
+            array(
+                'key' => 'field_56b9cf25a4841',
+                'label' => 'Service Links',
+                'name' => 'service_links',
+                'type' => 'repeater',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_56b9cf40a4842',
+                        'label' => 'Text',
+                        'name' => 'text',
+                        'type' => 'text',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'formatting' => 'html',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_56b9cf4ea4843',
+                        'label' => 'URL',
+                        'name' => 'url',
+                        'type' => 'text',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'formatting' => 'none',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_56d45a63c88b0',
+                        'label' => 'Opens in new Window',
+                        'name' => 'opens_in_new_window',
+                        'type' => 'radio',
+                        'choices' => array(
+                            'No' => 'No',
+                            'Yes' => 'Yes',
+                        ),
+                        'other_choice' => 0,
+                        'save_other_choice' => 0,
+                        'default_value' => 'No',
+                        'layout' => 'vertical',
+                    ),
+                    array(
+                        'key' => 'field_56b9cf64a4844',
+                        'label' => 'Icon',
+                        'name' => 'icon',
+                        'type' => 'text',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => 'icon-',
+                        'append' => '',
+                        'formatting' => 'none',
+                        'maxlength' => '',
+                    ),
                 ),
-                'other_choice' => 0,
-                'save_other_choice' => 0,
-                'default_value' => 'No',
-                'layout' => 'vertical',
-              ),
-              array (
-                'key' => 'field_56b9cf64a4844',
-                'label' => 'Icon',
-                'name' => 'icon',
-                'type' => 'text',
-                'column_width' => '',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => 'icon-',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-              ),
+                'row_min' => '',
+                'row_limit' => '',
+                'layout' => 'table',
+                'button_label' => 'Add Link',
             ),
-            'row_min' => '',
-            'row_limit' => '',
-            'layout' => 'table',
-            'button_label' => 'Add Link',
-          ),
-          array (
-            'key' => 'field_56bb09a2fc659',
-            'label' => 'Popular Pages',
-            'name' => 'popular_pages',
-            'type' => 'repeater',
-            'sub_fields' => array (
-              array (
-                'key' => 'field_56bb09b7fc65a',
-                'label' => 'Text',
-                'name' => 'text',
-                'type' => 'text',
-                'column_width' => '',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-              ),
-              array (
-                'key' => 'field_56bb09c3fc65b',
-                'label' => 'URL',
-                'name' => 'url',
-                'type' => 'text',
-                'instructions' => 'Please enter the full url E.G. http://gov.uk',
-                'column_width' => '',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-              ),
+            array(
+                'key' => 'field_56bb09a2fc659',
+                'label' => 'Popular Pages',
+                'name' => 'popular_pages',
+                'type' => 'repeater',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_56bb09b7fc65a',
+                        'label' => 'Text',
+                        'name' => 'text',
+                        'type' => 'text',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'formatting' => 'none',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_56bb09c3fc65b',
+                        'label' => 'URL',
+                        'name' => 'url',
+                        'type' => 'text',
+                        'instructions' => 'Please enter the full url E.G. http://gov.uk',
+                        'column_width' => '',
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'formatting' => 'none',
+                        'maxlength' => '',
+                    ),
+                ),
+                'row_min' => '',
+                'row_limit' => '',
+                'layout' => 'table',
+                'button_label' => 'Add Link',
             ),
-            'row_min' => '',
-            'row_limit' => '',
-            'layout' => 'table',
-            'button_label' => 'Add Link',
-          ),
         ),
-        'location' => array (
-          array (
-            array (
-              'param' => 'options_page',
-              'operator' => '==',
-              'value' => 'acf-options-homepage',
-              'order_no' => 0,
-              'group_no' => 0,
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-homepage',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
             ),
-          ),
         ),
-        'options' => array (
-          'position' => 'normal',
-          'layout' => 'no_box',
-          'hide_on_screen' => array (
-          ),
+        'options' => array(
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array(),
         ),
         'menu_order' => 0,
-      ));
+    ));
+
+
+    // Policy kit page
+    register_field_group(array(
+        'key' => 'group_582d8f5d43c21',
+        'title' => 'Policy kit page',
+        'fields' => array(
+            array(
+                'key' => 'field_582d8f60af2b2',
+                'label' => 'Content',
+                'name' => 'policy-kit-content',
+                'type' => 'wysiwyg',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 'The one-stop shop for professional policy makers at DH. Everything you need to successfully apply the six DH Policy Tests throughout your policy projects.',
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-policy-kit',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => 1,
+        'description' => '',
+    ));
+}
+
+function current_user_is_admin()
+{
+    return current_user_can('edit_users');
 }

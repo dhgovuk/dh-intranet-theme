@@ -61,7 +61,8 @@ module.exports = function (grunt) {
       production: {
         files: {
           'static/main.min.js': 'assets/js/main.js',
-          'static/it-updates.min.js': 'assets/js/it-updates.js'
+          'static/it-updates.min.js': 'assets/js/it-updates.js',
+          'static/media.match.min.js': 'assets/js/media.match.min.js'
         }
       }
     },
@@ -70,7 +71,8 @@ module.exports = function (grunt) {
       production: {
         files: {
           'static/main.min.js.map': 'static/main.min.js',
-          'static/it-updates.min.js.map': 'static/it-updates.min.js'
+          'static/it-updates.min.js.map': 'static/it-updates.min.js',
+          'static/media.match.min.js.map': 'static/media.match.min.js'
         }
       }
     },

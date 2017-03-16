@@ -57,7 +57,6 @@
 
         <?php wp_reset_postdata(); ?>
 
-
     </div>
 
     <div class="other-news-stories">
@@ -137,8 +136,5 @@
 <aside class="sidebar group" role="complementary">
     <?php get_template_part('partials/service-links') ?>
     <?php get_template_part('partials/popular-pages') ?>
-    <?php //get_template_part('partials/todo-list') ?>
-    <?php //get_template_part('partials/your-building') ?>
-    <?php //get_template_part('partials/twitter') ?>
     <?php get_template_part('partials/events/events-sidebar') ?>
 </aside>

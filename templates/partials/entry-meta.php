@@ -1,5 +1,9 @@
 <div class="meta">
-    <time class="published" datetime="<?php echo comment_date('c'); ?>">Published on <?php echo get_the_time('d F Y'); ?></time>
-
-    <p class="author"><?php echo __('By', 'roots'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author"><?php echo get_the_author_meta('first_name').' '.get_the_author_meta('last_name'); ?></a></p>
+    <?php if (is_page()) : ?>
+        <p class="author"><?php echo __('Contact:', 'roots'); ?><a href="mailto:<?php echo get_field('page_owner_email')?>" rel="author"> <span itemprop="name"><?php echo get_field('page_owner_email')?> </span></a></p>
+    <?php elseif (get_post_type() === 'policy-kit' && get_field('page_owner') !== '') : ?>
+        <p class="author"><?php echo __('Contact:', 'roots'); ?><a href="mailto:<?php echo get_field('page_owner_email')?>" rel="author"> <span itemprop="name"><?php echo get_field('page_owner')?> </span></a></p>
+    <?php else : ?>
+        <p class="author"><?php echo __('Contact:', 'roots'); ?><span itemprop="name"> <?php the_author(); ?> </span></p>
+    <?php endif; ?>
 </div>

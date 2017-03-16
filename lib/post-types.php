@@ -1,28 +1,20 @@
 <?php
 
-
 add_action('init', function () {
-    register_post_type(
-        'todo-item',
-        array(
-            'labels' => array(
-                'name' => __('Checklist items'),
-                'singular_name' => __('Checklist item'),
-            ),
-            'public' => true,
-            'menu_position' => 30,
-        )
-    );
 
     register_post_type(
-        'local-news',
+        'policy-kit',
         array(
             'labels' => array(
-                'name' => __('In your building'),
-                'singular_name' => __('In your building'),
+                'name' => __('PolicyKit'),
+                'singular_name' => __('PolicyKit'),
             ),
+            'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
             'public' => true,
             'menu_position' => 30,
+            'show_ui' => true,
+            'hierarchical' => true,
+            'has_archive' => true,
         )
     );
 
@@ -33,9 +25,12 @@ add_action('init', function () {
                 'name' => __('Policy Steps'),
                 'singular_name' => __('Policy Step'),
             ),
-            'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+            'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'),
             'public' => true,
-            'menu_position' => 30,
+            'menu_position' => 60,
+            'show_ui' => true,
+            'hierarchical' => true,
+            'has_archive' => true,
         )
     );
 

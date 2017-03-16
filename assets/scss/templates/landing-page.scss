@@ -3,7 +3,9 @@
     margin: $margin 0 0 0;
 
     .child-pages {
-        margin-bottom: $margin;
+        margin-bottom: #{$margin * 2};
+        background: $nearly-white;
+        padding: #{$padding / 2};
 
         @media screen and (max-width: $medium-screen) {
             @include span-columns(12);
@@ -14,9 +16,8 @@
         }
 
         li {
-            border-bottom: 1px solid $light-medium-grey;
-            @include span-columns(6 of 12);
-            @include omega(2n);
+            @include span-columns(3 of 12);
+            @include omega(4n);
             @media screen and (max-width: $medium-screen) {
                 @include span-columns(12);
                 @include omega;
@@ -24,13 +25,24 @@
 
             a {
                 display: block;
-                padding: 10px 0;
+                padding: #{$padding / 2};
                 @include transition(all 0.2s ease-in-out);
-                color: $link-colour;
+                min-height: 180px;
+                background: $white;
+                margin-bottom: $margin;
+                box-shadow: 0 0 5px #bbb;
+
+                h3 {
+                  font-size: #{$base-font-size * 1.5};
+                  color: $link-colour;
+                }
 
                 &:hover {
-                    color: $link-hover-colour;
+                  h3 {
+                      color: $link-hover-colour;
+                  }
                 }
+
             }
         }
     }

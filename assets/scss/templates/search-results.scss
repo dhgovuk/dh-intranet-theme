@@ -21,6 +21,10 @@
 
     article {
       margin: 0 0 $margin;
+
+      .terms {
+        margin: $margin/2 0;
+      }
     }
 
     h2 {

@@ -1,7 +1,7 @@
-<section class="news-section">
-<header>
-    <h1><?php echo roots_title(); ?></h1>
-</header>
+<section class="news-section category">
+    <header>
+        <h1><?php echo roots_title(); ?></h1>
+    </header>
     <?php while (have_posts()) : ?>
         <?php the_post() ?>
         <article class="news-story entry group">
@@ -27,5 +27,3 @@
 <aside class="sidebar news-section-sidebar">
     <?php get_template_part('partials/sidebar'); ?>
 </aside>
-
-

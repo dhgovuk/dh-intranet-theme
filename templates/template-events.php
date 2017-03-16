@@ -2,7 +2,7 @@
 <?php the_post(); ?>
 
 <?php
-$args = array (
+$args = array(
     'taxonomy' => 'eventcat',
     'hide_empty' => 1,
     'fields' => 'all',
@@ -56,7 +56,7 @@ foreach ($categories as $cat) {
                 <h4>Jump to</h4>
                 <ul>
                     <?php foreach ($cats as $cat) : ?>
-                        <?php if( $cat['query']->have_posts() ): ?>
+                        <?php if ($cat['query']->have_posts()): ?>
                             <li><a href="<?php echo esc_url('#'.$cat['category']->slug) ?>"><?php echo esc_html($cat['category']->name) ?></a></li>
                         <?php endif ?>
                     <?php endforeach; ?>
@@ -69,12 +69,18 @@ foreach ($categories as $cat) {
     </div>
 
     <?php foreach ($cats as $cat) : ?>
-        <?php if( $cat['query']->have_posts() ): ?>
+        <?php if ($cat['query']->have_posts()): ?>
             <article class="event-category">
 
-                <h2 id="<?php echo esc_attr($cat['category']->slug) ?>"><a href="<?php echo esc_url('/event-category/'.$cat['category']->slug) ?>"><?php echo esc_html($cat['category']->name) ?></a></h2>
+                <header>
+                    <h2 id="<?php echo esc_attr($cat['category']->slug) ?>"><a href="<?php echo esc_url('/event-category/'.$cat['category']->slug) ?>"><?php echo esc_html($cat['category']->name) ?></a></h2>
 
-                <?php while( $cat['query']->have_posts() ) : ?>
+                    <a href="<?php echo esc_url('/event-category/'.$cat['category']->slug) ?>" class="button button--small">View all</a>
+                </header>
+
+
+
+                <?php while ($cat['query']->have_posts()) : ?>
                     <?php $cat['query']->the_post(); ?>
                     <?php get_template_part('partials/events/event-item'); ?>
                 <?php endwhile; ?>

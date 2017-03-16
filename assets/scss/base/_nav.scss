@@ -19,37 +19,37 @@ $sub-nav-background: #a3e8dd;
 
 .navigation {
 
-    .nav-menu {
+    .menu {
         text-align: left;
         display: block;
         position: relative;
         z-index: 15;
     }
 
-    .nav-item {
+    .menu > li {
         display: inline-block;
     }
 
-    .nav-item > a {
+    .menu > li > a {
         display: inline-block;
         padding: $padding/2 $padding;
         color: $nav-link;
     }
 
-    .active a,
-    .nav-item > a:hover,
-    .nav-item > a.open {
+    .menu > li.active a,
+    .menu > li > a:hover,
+    .menu > li > a.open {
         background: $nav-link-background-hover;
         color: $sub-nav-link;
     }
 
-    .nav-item > a:focus {
+    .menu > li > a:focus {
         background: $nav-link-background-hover;
         color: $sub-nav-link;
         outline: 2px solid $dh-dark-green;
     }
 
-    .nav-item > a.open {
+    .menu > li > a.open {
         position: relative;
         z-index: 1;
     }
@@ -57,8 +57,8 @@ $sub-nav-background: #a3e8dd;
     .sub-nav {
         position: absolute;
         display: none;
-        top: 54px;
-        padding: ($padding / 2) ($padding - 4px);
+        top: 52px;
+        padding: #{$padding / 2} #{$padding - 4px};
         background: $sub-nav-background;
         border-bottom: 3px solid $brand-primary;
     }
@@ -127,7 +127,7 @@ $sub-nav-background: #a3e8dd;
                     float: none;
                     display: block;
                     width: 100%;
-                    padding: $padding/2 $padding;
+                    padding: #{$padding / 2} $padding;
                     color: $nav-link;
                     background: transparent;
                     border-bottom: 1px solid $nav-link;
@@ -152,28 +152,24 @@ $sub-nav-background: #a3e8dd;
             min-width: 100%;
             display: block;
             color: #fff;
-            padding: ($padding/2) ($padding + 15);
+            padding: #{$padding / 2} #{$padding + 15};
         }
     }
 }
 
 // Nav Toggle
-
 .nav-toggle {
     @include hide;
     cursor: pointer;
     @include ghost-button ($white);
-    padding: 8px;
+    padding: 6px 6px 7px;
     font-size: $base-font-size;
 
 
     @media screen and (max-width: $medium-screen) {
         position: absolute;
         left: 30px;
-        top: 96px;
+        top: 97px;
         @include span-columns(3);
     }
 }
-
-
-@media screen and (max-width: $medium-screen) {}

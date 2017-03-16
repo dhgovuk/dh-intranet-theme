@@ -2,9 +2,10 @@
 @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "../../bower_components/neat/app/assets/stylesheets/_neat.scss";
 
-@import "settings/global";
+@import "helpers/mixins";
+@import "helpers/colours";
 
-@import "base/helpers";
+@import "settings/global";
 
 @import "base/reset";
 @import "base/typography";
@@ -15,10 +16,13 @@
 @import "base/site";
 @import "base/sidebar";
 
+@import "components/grid";
 @import "components/tabs";
 @import "components/pagination";
 @import "components/breadcrumbs";
 @import "components/it-updates";
+@import "components/entry-meta";
+@import "components/content-feedback";
 
 @import "templates/front-page";
 @import "templates/single";
@@ -26,12 +30,12 @@
 @import "templates/landing-page";
 @import "templates/category";
 @import "templates/page";
-@import "templates/new-events";
+@import "templates/events";
 @import "templates/profile";
-@import "templates/policy-dashboard";
 @import "templates/search-results";
 @import "templates/directorate";
 @import "templates/error";
+@import "templates/policy-kit";
 
 @import "wordpress/wp-admin";
 

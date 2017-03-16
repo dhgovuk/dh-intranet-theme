@@ -2,7 +2,44 @@
 
 add_action('init', function () {
 
-    register_taxonomy('policystage', ['policy-step'], [
+    register_taxonomy('policyguidance', ['policy-kit'], [
+        'update_count_callback' => '_update_post_term_count',
+        'hierarchical' => '1',
+        'rewrite' => [
+            'slug' => 'policyguidance',
+            'with_front' => true,
+            'hierarchical' => false,
+        ],
+        'query_var' => 'guidance',
+        'show_ui' => true,
+        'show_tagcloud' => false,
+        'show_in_nav_menus' => true,
+        'labels' => [
+            'name' => 'Policy Guidance',
+            'singular_name' => 'Policy Guidance',
+            'search_items' => 'Search Policy Guidance',
+            'popular_items' => 'Popular Policy Guidance',
+            'all_items' => 'All Policy Guidance',
+            'parent_item' => 'Parent Policy Guidance',
+            'parent_item_colon' => 'Parent Policy Guidance:',
+            'edit_item' => 'Edit Policy Guidance',
+            'update_item' => 'Update Policy Guidance',
+            'add_new_item' => 'Add New Policy Guidance',
+            'new_item_name' => 'New Policy Guidance name',
+            'separate_items_with_commas' => 'Separate Policy Guidance with commas',
+            'add_or_remove_items' => 'Add or remove Policy Guidance',
+            'choose_from_most_used' => 'Choose from the most used Policy Guidance',
+        ],
+        'capabilities' => [
+            'manage_terms' => 'manage_categories',
+            'edit_terms' => 'manage_categories',
+            'delete_terms' => 'manage_categories',
+            'assign_terms' => 'edit_posts',
+        ],
+        'public' => true,
+    ]);
+
+    register_taxonomy('policystage', ['policy-kit'], [
         'update_count_callback' => '_update_post_term_count',
         'hierarchical' => '1',
         'rewrite' => [
@@ -39,7 +76,7 @@ add_action('init', function () {
         'public' => true,
     ]);
 
-    register_taxonomy('policytests', ['policy-step'], [
+    register_taxonomy('policytests', ['policy-kit'], [
         'update_count_callback' => '_update_post_term_count',
         'hierarchical' => '1',
         'rewrite' => [
@@ -76,7 +113,7 @@ add_action('init', function () {
         'public' => true,
     ]);
 
-    register_taxonomy('policypriority', ['policy-step'], [
+    register_taxonomy('policypriority', ['policy-kit'], [
         'update_count_callback' => '_update_post_term_count',
         'hierarchical' => '1',
         'rewrite' => [

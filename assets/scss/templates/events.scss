@@ -1,46 +1,226 @@
-.events-single {
+// Listing Page
+.events-section {
 
-  .meta {
-    margin: 0 0 $margin;
-  }
-}
-
-.events-aggregation {
-  @include outer-container(100%);
-
-  .event-item {
-    @include span-columns(4);
-    min-height: 140px;
+  header {
+    @include span-columns(8);
 
     @media screen and (max-width: $medium-screen) {
       @include span-columns(12);
+    }
+  }
+
+  .events-section-sidebar {
+    @include span-columns(4);
+
+    @media screen and (max-width: $medium-screen) {
+      display: none;
+    }
+  }
+
+  .event-categories {
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: block;
+      float: left;
+      margin: 0 5px 5px 0;
+      background: $dh-blue;
+      padding: 10px;
+      line-height: 1;
+      color: $white;
+
+      &:hover {
+        background: $dh-green;
+      }
+    }
+  }
+
+  .event-category {
+    clear: both;
+    header {
+      clear: both;
+      h2 {
+        float: left;
+        margin: 0 #{$margin * 2} $margin 0;
+      }
+    }
+  }
+}
+
+// Event Item
+.event-item {
+  background: $nearly-white;
+  padding: $padding/2;
+  @include span-columns(4);
+  height: 392px;
+  margin-bottom: $margin;
+
+  &:nth-of-type(3n) {
+    @include omega();
+  }
+
+  @media screen and (max-width: $big-screen) {
+    @include span-columns(6);
+    &:nth-of-type(3n) {
+      margin-right: 2.35765%;
+    }
+    &:nth-of-type(2n) {
+      @include omega();
+    }
+  }
+  @media screen and (max-width: $small-screen) {
+    @include span-columns(12);
+    &:nth-of-type(3n) {
+      @include omega();
+    }
+    &:nth-of-type(2n) {
       @include omega();
     }
   }
 
-  .event-date {
-    background: $brand-tertiary;
-    @include span-columns(1 of 4);
-    text-align: center;
-    padding: ($padding)/2;
-    font-size: $base-font-size*1.076;
-    font-weight: bold;
+  .button {
+    float: right;
   }
 
-  .event-content {
-    padding: 0 ($padding)/2;
-    @include span-columns(3 of 4);
+  .event-name {
+    h3 {
+      margin: 0;
+      font-size: $base-font-size;
 
-    strong {
-      font-weight: bold;
+      a {
+        color: $base-font-colour;
+
+        &:hover {
+          color: $dh-blue;
+        }
+      }
+    }
+
+    h4 {
+      margin-top: 0;
+      font-size: $base-font-size;
     }
   }
 
-  h3 {
-    margin-top: 0;
-    font-size: $base-font-size;
+  .event-name {
+    @include span-columns(8);
+    @include omega();
   }
 
+  .event-details {
+    clear: both;
+    margin: $margin/2 0;
 
+    p {
+      border-top: 1px solid $dh-coolgrey;
+      margin: $margin/2 0 0;
+      padding: $padding/2 0 0;
+    }
+  }
 
+  .event-meta {
+    font-weight: bold;
+    a {
+      color: $base-font-colour;
+      &:hover {
+        color: $dh-blue;
+      }
+    }
+  }
+}
+
+// Event Date
+.event-date {
+  @include span-columns(4);
+  background: $white;
+  color: $base-font-colour;
+  text-align: center;
+  font-weight: bold;
+
+  a {
+    color: $base-font-colour;
+  }
+
+  .day {
+    display: block;
+    font-size: $base-font-size*3;
+  }
+  .month {
+    display: block;
+    color: $white;
+    background: $dh-red;
+    font-size: $base-font-size;
+    text-transform: uppercase;
+  }
+}
+
+// Widget
+.event-widget-item {
+   width: 100%;
+   height: auto;
+
+  a {
+    color: $base-font-colour;
+  }
+
+  &:hover {
+    background: scale-color($nearly-white, $lightness: 25%);
+    color: $base-font-colour;
+  }
+}
+
+// Single Event
+.event-single {
+  @include span-columns(8);
+
+  @media screen and (max-width: $small-screen) {
+    @include span-columns(12);
+  }
+
+  .event-meta {
+    font-weight: bold;
+    margin: 0 0 $margin 0;
+    a {
+      color: $base-font-colour;
+      &:hover {
+        color: $dh-blue;
+      }
+    }
+  }
+
+  .when-where {
+    width: 50%;
+    float: left;
+    @media screen and (max-width: $small-screen) {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  .event-actions {
+    width: 50%;
+    float: right;
+    text-align: right;
+    @media screen and (max-width: $small-screen) {
+        margin: $margin 0 0 0;
+        width: 100%;
+        float: none;
+        text-align: left;
+    }
+
+    .jump-back {
+      display: block;
+    }
+
+    .button {
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
 }

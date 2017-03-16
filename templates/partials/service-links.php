@@ -1,6 +1,5 @@
 <?php if( have_rows('service_links', 'option') ): ?>
 
-
 <section class="service-links-widget group">
   <h3>Services</h3>
 

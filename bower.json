@@ -1,7 +1,7 @@
 {
-  "name": "DH Intranet WordPress Theme",
+  "name": "dh-Intranet",
   "dependencies": {
-    "jquery": "~1.12.0",
+    "jquery": "~1.12.4",
     "jsrender": "~1.0.0-beta",
     "jquery-accessibleMegaMenu": "https://github.com/adobe-accessibility/Accessible-Mega-Menu.git",
     "enquire": "~2.1.2",

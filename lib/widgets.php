@@ -19,3 +19,12 @@ add_action('widgets_init', function () {
         'after_widget' => '</section>',
     ));
 });
+
+add_action('widgets_init', function () {
+    register_sidebar(array(
+        'name' => 'Policy kit sidebar',
+        'id' => 'policy_kit_sidebar',
+        'before_widget' => '<section class="policy-kit-widget">',
+        'after_widget' => '</section>',
+    ));
+});

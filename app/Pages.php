@@ -34,7 +34,10 @@ class Pages
 
     public static function the_breadcrumbs()
     {
-        echo '<ul>', self::get_the_breadcrumbs(), '</ul>';
+        $breadcrumbs = self::get_the_breadcrumbs();
+        if ($breadcrumbs !== '') {
+            echo '<ul>' . $breadcrumbs . '</ul>';
+        };
     }
 
     public static function excerpt($text, $length)
@@ -58,8 +61,8 @@ class Pages
         echo '<div class="paginate">';
         the_posts_pagination(array(
             'mid_size' => 6,
-            'prev_text' => 'Older posts',
-            'next_text' => 'Newer posts',
+            'prev_text' => 'Newer posts',
+            'next_text' => 'Older posts',
         ));
         echo '</div>';
 

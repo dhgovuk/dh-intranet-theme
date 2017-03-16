@@ -8,25 +8,4 @@
          @include span-columns(12);
       }
     }
-
-    .content-feedback {
-        clear: both;
-        margin: $margin 0;
-        display: inline-block;
-
-        .hidden {
-            display: none;
-        }
-
-        .content-feedback-found-it-label {
-            color: $link-colour;
-            text-decoration: underline;
-            cursor: pointer;
-
-            &:hover {
-               color: $link-hover-colour;
-            }
-        }
-    }
-
 }

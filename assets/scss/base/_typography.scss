@@ -8,57 +8,45 @@ $font-family-serif: "Georgia", Times, Serif;
 
 $base-sans: $font-family-sans;
 $base-font-size: 16px;
-$base-line-height: 1.6; // phi
+$base-line-height: 1.4;
 
 $heading-line-height: 1.4;
 $heading-colour: $base-font-colour;
 $heading-link: $brand-secondary;
 $heading-link-hover: $brand-primary;
 
-// Headings
+$paragraph-measure: 44em;
 
+// Headings
 h1 {
-  font-size: $base-font-size*2.5;
-  font-weight: bold;
-  line-height: 1.2;
-  margin: 0 0 1em 0;
+  font-size: #{$base-font-size * 2.5};
 }
 
 h2 {
-  font-size: $base-font-size*2;
-  font-weight: bold;
-  line-height: $heading-line-height;
-  margin: 0 0 1em 0;
+  font-size: #{$base-font-size * 2};
 }
 
 h3 {
-  font-size: $base-font-size*1.5;
-  font-weight: bold;
-  line-height: $heading-line-height;
-  margin: 0 0 1em 0;
+  font-size: #{$base-font-size * 2};
 }
 
 h4 {
-  font-size: $base-font-size;
-  font-weight: bold;
-  line-height: $heading-line-height;
-  margin: 0 0 1em 0;
+  font-size: #{$base-font-size * 1.5};
 }
 
 h5 {
   font-size: $base-font-size;
-  font-weight: bold;
-  margin: 0 0 1em 0;
 }
 
 h6 {
   font-size: $base-font-size;
-  font-weight: bold;
-  margin: 0 0 1em 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $heading-colour;
+  font-weight: bold;
+  line-height: $heading-line-height;
+  margin: 0 0 $margin 0;
 
   a {
     color: $heading-link;
@@ -69,44 +57,55 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 .rich-text {
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: $margin 0 #{$margin / 2};
+    max-width: 30em;
+  }
+
   article p, p {
-    margin: 0 0 1em 0;
-    max-width: 56em;
+    margin: 0 0 $margin 0;
+    max-width: $paragraph-measure;
     -webkit-font-variant-ligatures: discretionary-ligatures;
   }
 
   article ul, ul {
-    margin: 0 0 1em 1em;
+    margin: 0 0 $margin 18px;
+    max-width: $paragraph-measure;
     li {
       list-style-type: disc;
+      margin-bottom: #{$margin / 2};
       ul {
-        margin: 0 0 0 1em;
+        margin: 0 0 0 $margin;
         li {
           list-style-type: circle;
+          margin-bottom: #{$margin / 2};
         }
       }
     }
   }
 
   article ol, ol {
-    margin: 0 0 1em 1em;
+    margin: 0 0 $margin 18px;
+    max-width: $paragraph-measure;
     li {
       list-style-type: decimal;
+      margin-bottom: 0.5em;
       ol {
-        margin: 0 0 0 1em;
+        margin: 0 0 0 $margin;
         li {
           list-style-type: lower-latin;
+          margin-bottom: #{$margin / 2};
         }
       }
     }
   }
 
   blockquote {
-    padding: 0 0 0 2em;
-    margin: 0 0 1em 0;
-    max-width: 40em;
+    padding: 0 0 0 #{$padding * 2};
+    margin: 0 0 $margin 0;
+    max-width: $paragraph-measure;
     border-left: 4px solid scale-color($base-font-colour, $lightness: 50%);
 
     cite:before {
@@ -123,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
     hr {
       border: none;
       border-top: 1px solid scale-color($base-font-colour, $lightness: 50%);
-      margin: 1em 0;
+      margin: $margin 0;
       height: 0;
       line-height: 0;
     }
@@ -149,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
 
     // Tables
     table {
-      width: 99%;
+      width: $paragraph-measure;
       border: 1px solid $table-borders;
       margin: 0 0 $margin;
 

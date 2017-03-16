@@ -1,0 +1,199 @@
+.policy-kit-archive {
+  @include span-columns(8);
+
+  @media screen and (max-width: $medium-screen) {
+      @include span-columns(12);
+  }
+
+  .policy-kit-search-form {
+    background: $dh-blue;
+    padding: $padding $padding/2;
+    margin-bottom: $margin;
+
+    label {
+      display: block;
+      padding: 0 0 10px 0;
+      color: $white;
+    }
+
+    input[type=search] {
+      width: 75%;
+      border: 2px solid scale-color($dh-blue, $lightness: -50%);
+    }
+
+    .button {
+      float: right;
+      width: 25%;
+      margin: 0;
+      padding: 8px 15px;
+      background-color: scale-color($dh-blue, $lightness: -50%);
+
+      img {
+          width: 18px;
+          height: auto;
+          position: relative;
+          top: 2px;
+      }
+
+      span {
+          position: absolute;
+          left: -9999px;
+      }
+
+      &:hover {
+          background-color: scale-color($dh-blue, $lightness: -75%);
+      }
+    }
+  }
+
+  .gridrow {
+    @include gridrow(true);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+  }
+
+  .intro {
+    margin-bottom: $margin;
+  }
+
+    article {
+    @include gridcol(1/3);
+    position: relative;
+    margin: 0 0 $margin;
+
+      @media screen and (max-width: $medium-screen) {
+          @include gridcol(1/1);
+      }
+
+      .inner {
+        background: $doc-white;
+        @media screen and (max-width: $medium-screen) {
+            min-height: auto;
+        }
+
+        &:hover {
+          background: $nearly-white;
+        }
+      }
+
+      h2 {
+        font-size: $base-font-size;
+      }
+
+      .taxonomy {
+        position: absolute;
+        left: 30px;
+        bottom: 15px;
+      }
+
+      .term {
+        display: block;
+        float: left;
+        background: $dh-green;
+        color: #fff;
+        padding: 3px 6px 4px;
+        border-radius: 3px;
+        font-size: 14px;
+        margin: 3px 6px 3px 0;
+
+        &.have-you-thought-about {
+          background: $dh-purple;
+        }
+      }
+
+      .icon-close {
+        width: 24px;
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        display: none;
+      }
+
+      .summary {
+        padding: 15px;
+        min-height: 200px;
+      }
+
+      &.open {
+        width: 100%;
+        background: url() no-repeat top right;
+
+        .inner {
+          background: $doc-white;
+
+          &:hover {
+            background: $doc-white;
+          }
+        }
+
+        .summary {
+          min-height: auto;
+        }
+
+        h2 {
+          font-size: $base-font-size*1.5;
+        }
+
+        .taxonomy {
+          position: absolute;
+          left: auto;
+          bottom: auto;
+          right: 30px;
+          top: 60px;
+        }
+
+        .icon-close {
+          display: inline-block;
+        }
+      }
+
+
+    }
+  .more-panel {
+    clear: both;
+    position: relative;
+    padding: $padding/2;
+    &.hide {
+      display: none;
+    }
+
+    .tabs {}
+
+    .button {
+      margin: 0;
+    }
+  }
+}
+
+.section-single-policy-kit {
+  @include span-columns(8);
+  @media screen and (max-width: $medium-screen) {
+      @include span-columns(12);
+  }
+
+  .children {
+    @include gridrow(true);
+    margin-top: $margin * 2;
+
+    header {
+      padding: 0 15px;
+    }
+
+    li {
+      @include gridcol(1/3);
+      @media screen and (max-width: $medium-screen) {
+          @include gridcol(1/1);
+      }
+
+      a {
+        min-height: 200px;
+        padding: 15px;
+        display: block;
+        background: $nearly-white;
+        margin-top: $margin;
+      }
+    }
+  }
+}

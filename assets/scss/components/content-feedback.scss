@@ -1,0 +1,73 @@
+.content-feedback {
+    clear: both;
+    margin: $margin 0;
+    @include span-columns(8);
+
+    .hidden {
+        display: none;
+    }
+
+    .content-feedback-found-it-label {
+        color: $link-colour;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+           color: $link-hover-colour;
+        }
+    }
+}
+
+.content-feedback-everything-else {
+  padding: $padding 0;
+}
+
+.content-feedback-found-it-controls {
+  label {
+    position: relative;
+    background: scale-color($input-border, $lightness: 75%);
+    border: 2px solid scale-color($input-border, $lightness: 75%);
+    padding: ($padding)/2 $padding ($padding)/2 ($padding)+($padding)/2;
+    margin: 0 $margin $margin 0;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+  }
+
+  input {
+    position: absolute;
+    top: 17px;
+    left: 15px;
+  }
+}
+
+.content-feedback-looking-for {
+  padding: $padding 0 0;
+
+  label {
+    display: block;
+    padding-bottom: 5px;
+  }
+}
+
+.content-feedback-submit {
+  padding: $padding 0;
+  .btn {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor: pointer;
+    border: 0;
+    padding: ($padding)/2 $padding;
+    background: $button;
+    font-size: $base-font-size;
+    color: $button-text;
+    transition: all 0.2s ease-in-out;
+    margin: 0 0 $margin 0;
+    outline: none;
+
+    &:hover {
+      background: $button-hover;
+      color: $button-text;
+    }
+  }
+}
